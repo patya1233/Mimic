@@ -1,0 +1,217 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+local Window = OrionLib:MakeWindow({Name = "Fack HUB", HidePremium = false,  Introtext = "Fack HUB", SaveConfig = true, ConfigFolder = "Fack HUB"})
+
+OrionLib:MakeNotification({
+	Name = "hey",
+	Content = "I thed it for the first just",
+	Image = "rbxassetid://4483345998",
+	TimeTime
+	})
+
+local fackTab = Window:MakeTab({
+	Name = "b1c1",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+	})
+
+local Section = fackTab:AddSection({
+	Name = "Part1"
+})
+
+fackTab:AddButton({
+	Name = "auto win",
+	Callback = function()     		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(923.393372, -9.47075081, 162.191574, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+  	end  
+	})
+
+local Section = fackTab:AddSection({
+	Name = "Part2"
+})
+
+
+fackTab:AddButton({
+	Name = "auto win",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3448.49512, 34.576931, -1551.67749, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+  	end  
+	})
+
+local Section = fackTab:AddSection({
+	Name = "Part3"
+})
+
+fackTab:AddButton({
+	Name = "auto win",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-165.229172, 61.4286423, -2322.59351, 0.583726048, 0.00830592401, 0.811908185, 0.0327253267, 0.998894513, -0.0337468795, -0.81129092, 0.0462688915, 0.582808971)
+  	end  
+	})
+
+local Section = fackTab:AddSection({
+	Name = "Part4"
+})
+
+fackTab:AddButton({
+	Name = "auto win",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1272.8075, 201.615051, -2537.38843, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+  	end  
+	})
+
+local aTab = Window:MakeTab({
+	Name = "b1c2",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+	})
+
+local Section = aTab:AddSection({
+	Name = "Part1"
+})
+
+aTab:AddButton({
+	Name = "auto win",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(26.5080051, 33.504612, -536.645996, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+  	end  
+	})
+
+local Section = aTab:AddSection({
+	Name = "Part2"
+})
+
+aTab:AddButton({
+	Name = "auto win",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(68.3324432, 61.9521561, -1614.55261, 0, 0, 1, 1, 0, 0, 0, 1, 0)
+  	end  
+	})
+
+local Section = aTab:AddSection({
+	Name = "Part3"
+})
+
+aTab:AddButton({
+	Name = "auto win",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(412.624054, 104.1931, -68.1834106, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+  	end  
+	})
+
+local Section = aTab:AddSection({
+	Name = "Part4"
+})
+
+aTab:AddButton({
+	Name = "auto win",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(237.877243, 98.9412842, -586.641235, -1, 0, -0, 0, 0, -1, 0, -1, -0)
+  	end  
+	})
+
+local Section = aTab:AddSection({
+	Name = "Part5"
+})
+
+aTab:AddButton({
+	Name = "auto win",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(863.558289, 79.4404068, -353.719604, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+  	end  
+	})
+
+local bTab = Window:MakeTab({
+	Name = "b1c3",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+	})
+
+local Section = bTab:AddSection({
+	Name = "Part1"
+})
+
+bTab:AddButton({
+	Name = "auto win",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1533.97632, 97.5409698, -366.758148, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+  	end  
+	})
+
+local Section = bTab:AddSection({
+	Name = "Part2"
+})
+
+bTab:AddButton({
+	Name = "auto win",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2328.59961, -4.04398394, 820.075623, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+  	end  
+	})
+
+local Section = bTab:AddSection({
+	Name = "Part3"
+})
+
+bTab:AddButton({
+	Name = "auto win",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2411.87427, -15.7511759, 2285.42798, 0, 0, 1, 1, 0, 0, 0, 1, 0)
+  	end  
+	})
+
+local Section = bTab:AddSection({
+	Name = "Part4"
+})
+
+bTab:AddButton({
+	Name = "auto win",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(180.159744, 33.9944229, 185.300354, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+  	end  
+	})
+
+local Section = bTab:AddSection({
+	Name = "Part5"
+})
+
+bTab:AddButton({
+	Name = "auto win",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(242.771713, 34.3152275, 449.323639, 0, 0, 1, 1, 0, 0, 0, 1, 0)
+  	end  
+	})
+
+local Section = bTab:AddSection({
+	Name = "Part6"
+})
+
+bTab:AddButton({
+	Name = "auto win",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(288.670288, 664.400696, -1330.86584, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+  	end  
+	})
+
+local Section = bTab:AddSection({
+	Name = "Part7"
+})
+
+bTab:AddButton({
+	Name = "auto win",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-653.394043, 666.746033, -1020.17737, 0, 0, 1, 0, 1, -0, -1, 0, 01)
+  	end  
+	})
+
+local Section = bTab:AddSection({
+	Name = "Part8"
+})
+
+bTab:AddButton({
+	Name = "auto win",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-643.695007, 948.410156, -1491.67163, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+  	end  
+	})
+
+OrionLib:Init()
