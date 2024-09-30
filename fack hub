@@ -308,7 +308,7 @@ end
 	})
 
 local aTab = Window:MakeTab({
-	Name = "b1c2",
+	Name = "book1 chapter2",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 	})
@@ -369,7 +369,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(863.5582
 	})
 
 local bTab = Window:MakeTab({
-	Name = "b1c3",
+	Name = "book1 chapter3",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 	})
@@ -461,5 +461,15 @@ bTab:AddButton({
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-643.695007, 948.410156, -1491.67163, 0, 0, 1, 0, 1, -0, -1, 0, 0)
   	end  
 	})
+
+local aTab = Window:MakeTab({
+	Name = "book1 chapter4",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+	})
+
+local Section = bTab:AddSection({
+	Name = "รอมีเวลาาาาาาา"
+})
 
 OrionLib:Init()
