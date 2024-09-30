@@ -97,7 +97,7 @@ local Section = fackTab:AddSection({
 fackTab:AddButton({
 	Name = "esp all key",
 	Callback = function()
- -- ตรวจสอบว่าโฟลเดอร์ Givers มีอยู่ใน Workspace หรือไม่
+-- ตรวจสอบว่าโฟลเดอร์ Givers มีอยู่ใน Workspace หรือไม่
 local giversFolder = game.Workspace:FindFirstChild("Givers")
 
 if giversFolder then
@@ -131,8 +131,8 @@ if giversFolder then
             local esp = Instance.new("BillboardGui")
             esp.Name = "ESPText"
             esp.AlwaysOnTop = true -- ให้ตัวหนังสืออยู่ด้านบนเสมอ
-            esp.Size = UDim2.new(0, 200, 0, 50) -- ขนาดของกล่องแสดงผล
-            esp.StudsOffset = Vector3.new(0, 3, 0) -- ระยะห่างจากวัตถุ (เหนือขึ้นไป)
+            esp.Size = UDim2.new(0, 25, 0, 25) -- ขนาดของกล่องแสดงผล
+            esp.StudsOffset = Vector3.new(0, 2, 0) -- ระยะห่างจากวัตถุ (เหนือขึ้นไป)
 
             -- สร้าง TextLabel สำหรับแสดงชื่อ Key
             local textLabel = Instance.new("TextLabel")
