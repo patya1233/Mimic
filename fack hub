@@ -10,25 +10,120 @@ OrionLib:MakeNotification({
 	})
 
 local fackTab = Window:MakeTab({
-	Name = "b1c1",
+	Name = "book1 chapter1",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 	})
 
 local Section = fackTab:AddSection({
-	Name = "Part1"
+	Name = "Hiachi1"
 })
 
 fackTab:AddButton({
+	Name = "tp to key1",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(681.439636, 3.04999924, 484.75058, -0.0825096369, 3.73737947e-08, -0.996590316, 4.39090098e-10, 1, 3.74653126e-08, 0.996590316, 2.65365641e-09, -0.0825096369)
+        end  
+	})
+
+fackTab:AddButton({
+	Name = "tp to door1",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new()
+        end  
+	})
+
+fackTab:AddButton({
 	Name = "auto win",
-	Callback = function()     		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(923.393372, -9.47075081, 162.191574, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(923.393372, -9.47075081, 162.191574, 1, 0, 0, 0, 1, 0, 0, 0, 1)
   	end  
 	})
 
 local Section = fackTab:AddSection({
-	Name = "Part2"
+	Name = "esp All keys"
 })
 
+fackTab:AddButton({
+	Name = "esp key1",
+	Callback = function()
+ -- ตรวจสอบว่าโฟลเดอร์ Givers มีอยู่ใน Workspace หรือไม่
+local giversFolder = game.Workspace:FindFirstChild("Givers")
+
+if giversFolder then
+    -- รายชื่อ Key ที่ต้องการตรวจสอบ
+    local keys = {"Key1", "Key2", "Key3"}
+
+    -- วนลูปผ่าน Key ทั้งสาม
+    for _, keyName in pairs(keys) do
+        local key = giversFolder:FindFirstChild(keyName)
+
+        if key then
+            -- ตรวจสอบและลบ Highlight เก่าถ้ามี
+            local existingHighlight = key:FindFirstChildOfClass("Highlight")
+            if existingHighlight then
+                existingHighlight:Destroy()
+            end
+
+            -- สร้าง Highlight ใหม่
+            local highlight = Instance.new("Highlight")
+            highlight.FillTransparency = 1 -- โปร่งใสข้างใน
+            highlight.OutlineColor = Color3.fromRGB(0, 255, 0) -- ขอบสีเขียว
+            highlight.Parent = key -- เพิ่ม Highlight ให้กับ Key
+
+            -- ตรวจสอบและลบ BillboardGui (ESP Text) เก่าถ้ามี
+            local existingESP = key:FindFirstChildOfClass("BillboardGui")
+            if existingESP then
+                existingESP:Destroy()
+            end
+
+            -- สร้าง BillboardGui ใหม่ (สำหรับ ESP Text)
+            local esp = Instance.new("BillboardGui")
+            esp.Name = "ESPText"
+            esp.AlwaysOnTop = true -- ให้ตัวหนังสืออยู่ด้านบนเสมอ
+            esp.Size = UDim2.new(0, 200, 0, 50) -- ขนาดของกล่องแสดงผล
+            esp.StudsOffset = Vector3.new(0, 3, 0) -- ระยะห่างจากวัตถุ (เหนือขึ้นไป)
+
+            -- สร้าง TextLabel สำหรับแสดงชื่อ Key
+            local textLabel = Instance.new("TextLabel")
+            textLabel.Size = UDim2.new(1, 0, 1, 0)
+            textLabel.BackgroundTransparency = 1 -- พื้นหลังโปร่งใส
+            textLabel.Text = keyName -- แสดงชื่อของ Key
+            textLabel.TextColor3 = Color3.fromRGB(0, 255, 0) -- สีตัวอักษรสีเขียว
+            textLabel.TextScaled = true -- ให้ข้อความขยายเต็มกรอบ
+
+            -- เพิ่ม TextLabel เข้าไปใน BillboardGui
+            textLabel.Parent = esp
+
+            -- เพิ่ม BillboardGui เข้าไปใน Key
+            esp.Parent = key
+        else
+            print(keyName .. " ไม่พบใน Givers")
+        end
+    end
+else
+    print("ไม่พบโฟลเดอร์ Givers ใน Workspace")
+end
+        end  
+	})
+
+local Section = fackTab:AddSection({
+	Name = "Hiachi2"
+})
+
+fackTab:AddButton({
+	Name = "tp to key2",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(861.357788, 3.19499969, 215.660324, 0.997686386, -9.9876063e-09, 0.0679836348, 1.18294272e-08, 1, -2.66895501e-08, -0.0679836422, 2.74320104e-08, 0.997686386)
+        end  
+	})
+
+fackTab:AddButton({
+	Name = "tp to door2",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(887.25293, 3.18499994, 252.147217, -0.0977587402, -4.0719069e-08, -0.995210171, 2.99488399e-08, 1, -4.38568968e-08, 0.995210171, -3.40927855e-08, -0.0977587402)
+        end  
+	})
 
 fackTab:AddButton({
 	Name = "auto win",
@@ -38,8 +133,22 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3448.495
 	})
 
 local Section = fackTab:AddSection({
-	Name = "Part3"
+	Name = "Hiachi3"
 })
+
+fackTab:AddButton({
+	Name = "tp to key3",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3312.0918, 37.6461105, -1759.12, 0.999948502, 5.62790081e-09, 0.0101488996, -4.35019043e-09, 1, -1.2591849e-07, -0.0101488996, 1.25867857e-07, 0.999948502)
+        end  
+	})
+
+fackTab:AddButton({
+	Name = "tp to exit",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3415.05591, 37.6461258, -1538.57166, 0.000509714417, 1.96306313e-08, -0.999999881, -5.85444493e-09, 1, 1.96276488e-08, 0.999999881, 5.8444396e-09, 0.000509714417)
+        end  
+	})
 
 fackTab:AddButton({
 	Name = "auto win",
@@ -49,14 +158,157 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-165.229
 	})
 
 local Section = fackTab:AddSection({
-	Name = "Part4"
+	Name = "esp Hiachi"
 })
+
+fackTab:AddButton({
+	Name = "esp Hiachi",
+	Callback = function()
+-- ตรวจสอบว่ามีโฟลเดอร์ GameAI ใน Workspace หรือไม่
+local gameAIFolder = workspace:FindFirstChild("GameAI")
+
+if gameAIFolder then
+    -- ตรวจสอบว่ามีโมเดลชื่อ AI ในโฟลเดอร์ GameAI หรือไม่
+    local aiModel = gameAIFolder:FindFirstChild("AI")
+    
+    if aiModel then
+        -- ตรวจสอบว่ามี Highlight อันเดิมอยู่หรือไม่
+        local existingHighlight = aiModel:FindFirstChildOfClass("Highlight")
+        
+        -- ถ้ามีให้ลบทิ้ง
+        if existingHighlight then
+            existingHighlight:Destroy()
+        end
+        
+        -- สร้าง Highlight ใหม่
+        local newHighlight = Instance.new("Highlight")
+        newHighlight.Parent = aiModel
+        
+        -- ตั้งค่าของ Highlight
+        newHighlight.FillColor = Color3.new(1, 0, 0) -- สีแดง (RGB: 1, 0, 0)
+        newHighlight.FillTransparency = 0.5 -- โปร่งใส 100%
+        newHighlight.OutlineColor = Color3.new(1, 0, 0) -- ขอบสีแดง
+        
+        print("เพิ่ม Highlight สีแดงให้โมเดล AI")
+    else
+        print("ไม่พบโมเดลชื่อ AI ในโฟลเดอร์ GameAI")
+    end
+else
+    print("ไม่พบโฟลเดอร์ GameAI ใน Workspace")
+end
+        end  
+	})
+
+local Section = fackTab:AddSection({
+	Name = "Elevator"
+})
+
+fackTab:AddButton({
+	Name = "tp to door",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-105.948975, 92.1338806, -2032.56787, 0.993965566, -3.46779028e-09, -0.109693289, 4.10672785e-09, 1, 5.59884272e-09, 0.109693289, -6.01553696e-09, 0.993965566)
+        end  
+	})
+
+fackTab:AddButton({
+	Name = "tp to Elevator 1",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-406.985504, 91.6366882, -3203.17749, 0.996930301, 3.6606405e-08, 0.0782942846, -4.13011172e-08, 1, 5.83430868e-08, -0.0782942846, -6.13976283e-08, 0.996930301)
+        end  
+	})
+
+fackTab:AddButton({
+	Name = "tp to Elevator 2",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-377.501038, 128.649124, -2745.41138, -0.0168304071, -2.30491004e-08, -0.99985832, 1.29260558e-09, 1, -2.30741257e-08, 0.99985832, -1.68076941e-09, -0.0168304071)
+        end  
+	})
+
+fackTab:AddButton({
+	Name = "tp to Elevator 3",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1272.8075, 201.615051, -2537.38843, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+        end  
+	})
 
 fackTab:AddButton({
 	Name = "auto win",
 	Callback = function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1272.8075, 201.615051, -2537.38843, 0, 0, 1, 0, 1, -0, -1, 0, 0)
   	end  
+	})
+
+local Section = fackTab:AddSection({
+	Name = "ESP"
+})
+
+fackTab:AddButton({
+	Name = "esp shizu and biwaki",
+	Callback = function()
+-- ตรวจสอบว่ามีโฟลเดอร์ GameAI2 ใน Workspace หรือไม่
+local folder = game.Workspace:FindFirstChild("GameAI2")
+
+if folder and folder:IsA("Folder") then
+    -- วนลูปผ่านลูกของโฟลเดอร์เพื่อหา Model
+    for _, child in ipairs(folder:GetChildren()) do
+        if child:IsA("Model") then
+            -- ลบ Highlight เดิมถ้ามีอยู่
+            local existingHighlight = child:FindFirstChildOfClass("Highlight")
+            if existingHighlight then
+                existingHighlight:Destroy()
+            end
+
+            -- สร้าง Highlight ใหม่
+            local highlight = Instance.new("Highlight")
+            highlight.Parent = child
+            highlight.OutlineColor = Color3.new(1, 0, 0) -- สีเส้นขอบสีแดง
+            highlight.FillColor = Color3.new(1, 0, 0) -- สีภายในสีแดง
+            highlight.OutlineTransparency = 0 -- ความโปร่งใสของเส้นขอบ (0 = ไม่โปร่งใส)
+            highlight.FillTransparency = 0.5 -- ความโปร่งใสของสีภายใน (0 = ไม่โปร่งใส)
+        end
+    end
+else
+    print("ไม่พบโฟลเดอร์ GameAI2 ใน Workspace")
+end
+        end  
+	})
+
+fackTab:AddButton({
+	Name = "esp kuriko",
+	Callback = function()
+-- ค้นหาโฟลเดอร์ GameAI ใน Workspace
+local gameAIFolder = workspace:FindFirstChild("GameAI")
+
+-- ตรวจสอบว่าโฟลเดอร์ GameAI มีอยู่หรือไม่
+if gameAIFolder then
+    -- วนลูปผ่านลูกทั้งหมดในโฟลเดอร์ GameAI
+    for _, child in ipairs(gameAIFolder:GetChildren()) do
+        -- ตรวจสอบว่า child เป็น Model หรือไม่
+        if child:IsA("Model") then
+            -- ลบ Highlight เดิมถ้ามีอยู่
+            local existingHighlight = child:FindFirstChildOfClass("Highlight")
+            if existingHighlight then
+                existingHighlight:Destroy()
+            end
+            
+            -- สร้าง Highlight ใหม่
+            local highlight = Instance.new("Highlight")
+            highlight.Parent = child
+            highlight.Adornee = child
+            
+            -- ตั้งค่าเส้นขอบและสี
+            highlight.OutlineColor = Color3.fromRGB(255, 0, 0) -- สีแดง
+            highlight.FillColor = Color3.fromRGB(255, 0, 0) -- สีแดง
+            highlight.OutlineTransparency = 0 -- ปรับความเข้ม
+            highlight.FillTransparency = 0.5 -- ความโปร่งใสของ Fill (ปรับได้ตามต้องการ)
+        end
+    end
+
+    print("เพิ่ม Highlight ให้กับโมเดลในโฟลเดอร์ GameAI เรียบร้อยแล้ว")
+else
+    print("ไม่พบโฟลเดอร์ GameAI ใน Workspace")
+end
+        end  
 	})
 
 local aTab = Window:MakeTab({
