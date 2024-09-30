@@ -41,11 +41,61 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(923.3933
 	})
 
 local Section = fackTab:AddSection({
-	Name = "esp All keys"
+	Name = "Hiachi2"
 })
 
 fackTab:AddButton({
-	Name = "esp key1",
+	Name = "tp to key2",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(861.357788, 3.19499969, 215.660324, 0.997686386, -9.9876063e-09, 0.0679836348, 1.18294272e-08, 1, -2.66895501e-08, -0.0679836422, 2.74320104e-08, 0.997686386)
+        end  
+	})
+
+fackTab:AddButton({
+	Name = "tp to door2",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(887.25293, 3.18499994, 252.147217, -0.0977587402, -4.0719069e-08, -0.995210171, 2.99488399e-08, 1, -4.38568968e-08, 0.995210171, -3.40927855e-08, -0.0977587402)
+        end  
+	})
+
+fackTab:AddButton({
+	Name = "auto win",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3448.49512, 34.576931, -1551.67749, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+  	end  
+	})
+
+local Section = fackTab:AddSection({
+	Name = "Hiachi3"
+})
+
+fackTab:AddButton({
+	Name = "tp to key3",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3312.0918, 37.6461105, -1759.12, 0.999948502, 5.62790081e-09, 0.0101488996, -4.35019043e-09, 1, -1.2591849e-07, -0.0101488996, 1.25867857e-07, 0.999948502)
+        end  
+	})
+
+fackTab:AddButton({
+	Name = "tp to exit",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3415.05591, 37.6461258, -1538.57166, 0.000509714417, 1.96306313e-08, -0.999999881, -5.85444493e-09, 1, 1.96276488e-08, 0.999999881, 5.8444396e-09, 0.000509714417)
+        end  
+	})
+
+fackTab:AddButton({
+	Name = "auto win",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-165.229172, 61.4286423, -2322.59351, 0.583726048, 0.00830592401, 0.811908185, 0.0327253267, 0.998894513, -0.0337468795, -0.81129092, 0.0462688915, 0.582808971)
+  	end  
+	})
+
+local Section = fackTab:AddSection({
+	Name = "esp Hiachi"
+})
+
+fackTab:AddButton({
+	Name = "esp all key",
 	Callback = function()
  -- ตรวจสอบว่าโฟลเดอร์ Givers มีอยู่ใน Workspace หรือไม่
 local giversFolder = game.Workspace:FindFirstChild("Givers")
@@ -106,60 +156,6 @@ else
 end
         end  
 	})
-
-local Section = fackTab:AddSection({
-	Name = "Hiachi2"
-})
-
-fackTab:AddButton({
-	Name = "tp to key2",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(861.357788, 3.19499969, 215.660324, 0.997686386, -9.9876063e-09, 0.0679836348, 1.18294272e-08, 1, -2.66895501e-08, -0.0679836422, 2.74320104e-08, 0.997686386)
-        end  
-	})
-
-fackTab:AddButton({
-	Name = "tp to door2",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(887.25293, 3.18499994, 252.147217, -0.0977587402, -4.0719069e-08, -0.995210171, 2.99488399e-08, 1, -4.38568968e-08, 0.995210171, -3.40927855e-08, -0.0977587402)
-        end  
-	})
-
-fackTab:AddButton({
-	Name = "auto win",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3448.49512, 34.576931, -1551.67749, -1, 0, 0, 0, 1, 0, 0, 0, -1)
-  	end  
-	})
-
-local Section = fackTab:AddSection({
-	Name = "Hiachi3"
-})
-
-fackTab:AddButton({
-	Name = "tp to key3",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3312.0918, 37.6461105, -1759.12, 0.999948502, 5.62790081e-09, 0.0101488996, -4.35019043e-09, 1, -1.2591849e-07, -0.0101488996, 1.25867857e-07, 0.999948502)
-        end  
-	})
-
-fackTab:AddButton({
-	Name = "tp to exit",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3415.05591, 37.6461258, -1538.57166, 0.000509714417, 1.96306313e-08, -0.999999881, -5.85444493e-09, 1, 1.96276488e-08, 0.999999881, 5.8444396e-09, 0.000509714417)
-        end  
-	})
-
-fackTab:AddButton({
-	Name = "auto win",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-165.229172, 61.4286423, -2322.59351, 0.583726048, 0.00830592401, 0.811908185, 0.0327253267, 0.998894513, -0.0337468795, -0.81129092, 0.0462688915, 0.582808971)
-  	end  
-	})
-
-local Section = fackTab:AddSection({
-	Name = "esp Hiachi"
-})
 
 fackTab:AddButton({
 	Name = "esp Hiachi",
