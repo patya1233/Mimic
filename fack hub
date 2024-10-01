@@ -29,15 +29,8 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(681.4396
 fackTab:AddButton({
 	Name = "tp to door1",
 	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(647.292786, 3.09999943, 128.6035, -0.0805395171, -8.44553298e-08, -0.996751428, -6.22915479e-08, 1, -7.96973012e-08, 0.996751428, 5.56704052e-08, -0.0805395171)
         end  
-	})
-
-fackTab:AddButton({
-	Name = "auto win",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(923.393372, -9.47075081, 162.191574, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-  	end  
 	})
 
 local Section = fackTab:AddSection({
@@ -61,7 +54,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(887.2529
 fackTab:AddButton({
 	Name = "auto win",
 	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3448.49512, 34.576931, -1551.67749, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(923.393372, -9.47075081, 162.191574, 1, 0, 0, 0, 1, 0, 0, 0, 1)
   	end  
 	})
 
@@ -86,7 +79,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3415.055
 fackTab:AddButton({
 	Name = "auto win",
 	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-165.229172, 61.4286423, -2322.59351, 0.583726048, 0.00830592401, 0.811908185, 0.0327253267, 0.998894513, -0.0337468795, -0.81129092, 0.0462688915, 0.582808971)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3448.49512, 34.576931, -1551.67749, -1, 0, 0, 0, 1, 0, 0, 0, -1)
   	end  
 	})
 
@@ -202,7 +195,7 @@ local Section = fackTab:AddSection({
 fackTab:AddButton({
 	Name = "tp to door",
 	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-105.948975, 92.1338806, -2032.56787, 0.993965566, -3.46779028e-09, -0.109693289, 4.10672785e-09, 1, 5.59884272e-09, 0.109693289, -6.01553696e-09, 0.993965566)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-165.229172, 61.4286423, -2322.59351, 0.583726048, 0.00830592401, 0.811908185, 0.0327253267, 0.998894513, -0.0337468795, -0.81129092, 0.0462688915, 0.582808971)
         end  
 	})
 
