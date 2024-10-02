@@ -310,7 +310,7 @@ end
 	})
 end
 
-local aTab = Window:MakeTab({
+local fackTab = Window:MakeTab({
 	Name = "book1 chapter2",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
@@ -319,7 +319,7 @@ local aTab = Window:MakeTab({
 local allowedPlaceIds = {6243699076, 6296321810, 6301638949, 6373539583, 6472459099, 6682163754, 6682164423}
 
 if table.find(allowedPlaceIds, game.PlaceId) then
-local Section = aTab:AddSection({
+local Section = fackTab:AddSection({
 	Name = "megumi"
 })
 
@@ -351,7 +351,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(26.50800
   	end  
 	})
 
-local Section = aTab:AddSection({
+local Section = fackTab:AddSection({
 	Name = "kusonoki"
 })
 
@@ -390,7 +390,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(68.33244
   	end  
 	})
 
-local Section = aTab:AddSection({
+local Section = fackTab:AddSection({
 	Name = "ESP"
 })
 
@@ -534,7 +534,7 @@ end
 local allowedPlaceIds = {6406571212}
 
 if table.find(allowedPlaceIds, game.PlaceId) then
-local Section = aTab:AddSection({
+local Section = fackTab:AddSection({
 	Name = "Hirosa1"
 })
 
@@ -559,7 +559,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(412.6240
   	end  
 	})
 
-local Section = aTab:AddSection({
+local Section = fackTab:AddSection({
 	Name = "Hirosa2"
 })
 
@@ -598,7 +598,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(237.8772
   	end  
 	})
 
-local Section = aTab:AddSection({
+local Section = fackTab:AddSection({
 	Name = "ESP"
 })
 
@@ -769,7 +769,7 @@ end
 local allowedPlaceIds = {6425178683}
 
 if table.find(allowedPlaceIds, game.PlaceId) then
-local Section = aTab:AddSection({
+local Section = fackTab:AddSection({
 	Name = "kintoru"
 })
 
@@ -794,7 +794,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(863.5582
   	end  
 	})
 
-local Section = aTab:AddSection({
+local Section = fackTab:AddSection({
 	Name = "ESP"
 })
 
