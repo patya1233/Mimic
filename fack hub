@@ -316,6 +316,9 @@ local aTab = Window:MakeTab({
 	PremiumOnly = false
 	})
 
+local allowedPlaceIds = {6243699076, 6296321810, 6301638949, 6373539583, 6472459099, 6682163754, 6682164423}
+
+if table.find(allowedPlaceIds, game.PlaceId) then
 local Section = aTab:AddSection({
 	Name = "megumi"
 })
@@ -526,7 +529,11 @@ else
 end
         end  
 	})
+end
 
+local allowedPlaceIds = {6406571212}
+
+if table.find(allowedPlaceIds, game.PlaceId) then
 local Section = aTab:AddSection({
 	Name = "Hirosa1"
 })
@@ -757,7 +764,11 @@ else
 end
         end  
 	})
+end
 
+local allowedPlaceIds = {6425178683}
+
+if table.find(allowedPlaceIds, game.PlaceId) then
 local Section = aTab:AddSection({
 	Name = "kintoru"
 })
@@ -873,6 +884,7 @@ else
 end
         end  
 	})
+end
 
 local bTab = Window:MakeTab({
 	Name = "book1 chapter3",
