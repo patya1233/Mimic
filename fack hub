@@ -15,6 +15,10 @@ local fackTab = Window:MakeTab({
 	PremiumOnly = false
 	})
 
+local allowedPlaceIds = {6296321810}
+
+if table.find(allowedPlaceIds, game.PlaceId) then
+
 local Section = fackTab:AddSection({
 	Name = "Hiachi1"
 })
@@ -187,6 +191,11 @@ else
 end
         end  
 	})
+end
+
+local allowedPlaceIds = {6301638949}
+
+if table.find(allowedPlaceIds, game.PlaceId) then
 
 local Section = fackTab:AddSection({
 	Name = "Elevator"
@@ -299,6 +308,7 @@ else
 end
         end  
 	})
+end
 
 local aTab = Window:MakeTab({
 	Name = "book1 chapter2",
