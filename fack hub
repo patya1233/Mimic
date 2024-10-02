@@ -356,6 +356,13 @@ local Section = fackTab:AddSection({
 })
 
 fackTab:AddButton({
+	Name = "tp to Front door",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(236.193542, 51.0303688, -915.864624, 0.999999583, 1.07941309e-08, 0.00089055358, -1.07809379e-08, 1, -1.48195003e-08, -0.000890553638, 1.48098929e-08, 0.999999583)
+        end  
+	})
+
+fackTab:AddButton({
 	Name = "tp to butterfly",
 	Callback = function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(90.8242035, 57.4451866, -1433.41614, -0.116371594, 2.69917582e-08, 0.993205667, -3.87303061e-08, 1, -3.17143432e-08, -0.993205667, -4.21578115e-08, -0.116371594)
@@ -365,7 +372,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(90.82420
 fackTab:AddButton({
 	Name = "tp to door",
 	Callback = function()
--- game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(233.105103, 51.0659294, -1434.06836, 0.996198237, -4.32539018e-08, -0.0871153474, 4.61693297e-08, 1, 3.14514637e-08, 0.0871153474, -3.53539491e-08, 0.996198237)
         end  
 	})
 
@@ -397,7 +404,6 @@ local Section = fackTab:AddSection({
 fackTab:AddButton({
 	Name = "esp item",
 	Callback = function()
--- ตรวจสอบว่ามี Model ชื่อ Key1 อยู่ใน Workspace หรือไม่
 local modelName = "Key1"
 local model = workspace:FindFirstChild(modelName)
 
@@ -438,7 +444,7 @@ if model then
     textLabel.Parent = billboardGui -- กำหนด parent เป็น BillboardGui
     textLabel.Size = UDim2.new(1, 0, 1, 0) -- ขนาดของ TextLabel
     textLabel.BackgroundTransparency = 1 -- พื้นหลังโปร่งใส
-    textLabel.Text = Key -- แสดงชื่อของ Model
+    textLabel.Text = "Key" -- แสดงคำว่า "Key"
     textLabel.TextColor3 = Color3.new(0, 1, 0) -- สีของข้อความเป็นสีเขียว
     textLabel.TextScaled = true -- ปรับขนาดตัวอักษรให้พอดีกับ TextLabel
 
@@ -548,7 +554,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(432.0928
 fackTab:AddButton({
 	Name = "tp to exit",
 	Callback = function()
--- game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(154.011459, 93.9802094, 52.7835541, 0.999519885, 3.1999253e-08, -0.0309840925, -3.40341053e-08, 1, -6.51466507e-08, 0.0309840925, 6.61698891e-08, 0.999519885)
         end  
 	})
 
@@ -573,7 +579,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(156.2177
 fackTab:AddButton({
 	Name = "tp to door",
 	Callback = function()
--- game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(291.769379, 101.94133, -553.294434, 0.999432802, 7.79543718e-09, -0.0336755998, -5.378757e-09, 1, 7.18541386e-08, 0.0336755998, -7.16322504e-08, 0.999432802)
         end  
 	})
 
@@ -587,7 +593,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(257.6480
 fackTab:AddButton({
 	Name = "tp to exit",
 	Callback = function()
--- game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(234.648117, 101.941269, -554.368774, 0.999833047, -7.73614062e-08, 0.0182745941, 7.62752279e-08, 1, 6.01336438e-08, -0.0182745941, -5.87297002e-08, 0.999833047)
         end  
 	})
 
@@ -605,7 +611,6 @@ local Section = fackTab:AddSection({
 fackTab:AddButton({
 	Name = "esp item",
 	Callback = function()
--- ตรวจสอบว่ามี Model ชื่อ Key1 อยู่ใน Workspace หรือไม่
 local modelName = "Key1"
 local model = workspace:FindFirstChild(modelName)
 
@@ -646,7 +651,7 @@ if model then
     textLabel.Parent = billboardGui -- กำหนด parent เป็น BillboardGui
     textLabel.Size = UDim2.new(1, 0, 1, 0) -- ขนาดของ TextLabel
     textLabel.BackgroundTransparency = 1 -- พื้นหลังโปร่งใส
-    textLabel.Text = Key -- แสดงชื่อของ Model
+    textLabel.Text = "Key" -- แสดงคำว่า "Key"
     textLabel.TextColor3 = Color3.new(0, 1, 0) -- สีของข้อความเป็นสีเขียว
     textLabel.TextScaled = true -- ปรับขนาดตัวอักษรให้พอดีกับ TextLabel
 
