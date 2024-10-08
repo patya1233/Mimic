@@ -1079,6 +1079,13 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(180.1597
         end  
 	})
 
+bTab:AddButton({
+	Name = "auto win",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(180.159744, 33.9944229, 185.300354, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+        end  
+	})
+
 local Section = bTab:AddSection({
 	Name = "Mihari1"
 })
@@ -1325,7 +1332,6 @@ bTab:AddButton({
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-643.695007, 948.410156, -1491.67163, 0, 0, 1, 0, 1, -0, -1, 0, 0)
   	end  
 	})
-end
 
 local Section = bTab:AddSection({
 	Name = "ESP"
@@ -1426,6 +1432,7 @@ else
 end
         end  
 	})
+end
 
 local aTab = Window:MakeTab({
 	Name = "book1 chapter4",
