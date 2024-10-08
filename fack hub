@@ -1007,6 +1007,10 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2411.874
   	end  
 	})
 
+local Section = bTab:AddSection({
+	Name = "ESP"
+})
+
 bTab:AddButton({
 	Name = "esp Monster",
 	Callback = function()
@@ -1078,6 +1082,10 @@ bTab:AddButton({
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(242.771713, 34.3152275, 449.323639, 0, 0, 1, 1, 0, 0, 0, 1, 0)
   	end  
 	})
+
+local Section = bTab:AddSection({
+	Name = "ESP"
+})
 
 bTab:AddButton({
 	Name = "esp item",
@@ -1299,6 +1307,10 @@ bTab:AddButton({
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-653.394043, 666.746033, -1020.17737, 0, 0, 1, 0, 1, -0, -1, 0, 01)
   	end  
 	})
+
+local Section = bTab:AddSection({
+	Name = "ESP"
+})
 
 bTab:AddButton({
 	Name = "esp item",
