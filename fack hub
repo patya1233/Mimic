@@ -897,8 +897,11 @@ local bTab = Window:MakeTab({
 	PremiumOnly = false
 	})
 
+local allowedPlaceIds = {6243699076, 6296321810, 6301638949, 6373539583, 6406571212, 6425178683, 6472459099}
+
+if table.find(allowedPlaceIds, game.PlaceId) then
 local Section = bTab:AddSection({
-	Name = "Part1"
+	Name = "Kaito"
 })
 
 bTab:AddButton({
@@ -909,8 +912,68 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1533.976
 	})
 
 local Section = bTab:AddSection({
-	Name = "Part2"
+	Name = "Kaito1"
 })
+
+bTab:AddButton({
+	Name = "tp to code",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2210.33887, 1.49474907, 376.277832, -0.997896731, -4.00356051e-08, -0.064824082, -4.4106411e-08, 1, 6.13666558e-08, 0.064824082, 6.40967386e-08, -0.997896731)
+        end  
+	})
+
+bTab:AddButton({
+	Name = "tp to door",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2235.52637, 1.5445962, 456.490479, -0.997967482, -1.14147049e-07, 0.0637248531, -1.09097513e-07, 1, 8.27192395e-08, -0.0637248531, 7.55988978e-08, -0.997967482)
+        end  
+	})
+
+bTab:AddButton({
+	Name = "tp to exit",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2258.20361, 1.54459643, 401.623047, 0.122757159, 5.69700802e-08, 0.992436767, -8.53194777e-08, 1, -4.68508468e-08, -0.992436767, -7.89229162e-08, 0.122757159)
+        end  
+	})
+
+local Section = bTab:AddSection({
+	Name = "Kaito2"
+})
+
+bTab:AddButton({
+	Name = "tp to code",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2139.26318, -0.742618501, 406.472534, 0.999359071, -1.94336458e-09, -0.035797935, 2.88113244e-09, 1, 2.61445603e-08, 0.035797935, -2.6230941e-08, 0.999359071)
+        end  
+	})
+
+bTab:AddButton({
+	Name = "tp to door",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2076.84131, -0.742618442, 409.959595, -0.0357177109, -7.31511918e-08, 0.999361932, -3.85847159e-08, 1, 7.18188602e-08, -0.999361932, -3.59948906e-08, -0.0357177109)
+        end  
+	})
+
+bTab:AddButton({
+	Name = "tp to sword",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1701.21802, 1.23458958, 767.532593, -0.994518876, 4.26414744e-08, 0.104557633, 4.22093471e-08, 1, -6.34562181e-09, -0.104557633, -1.89753147e-09, -0.994518876)
+        end  
+	})
+
+bTab:AddButton({
+	Name = "tp to Sword stand",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2000.37317, 1.09172821, 1071.27783, -0.999865651, -9.44207112e-09, 0.0163910892, -9.73050174e-09, 1, -1.75170296e-08, -0.0163910892, -1.76741697e-08, -0.999865651)
+        end  
+	})
+
+bTab:AddButton({
+	Name = "tp to exit",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2328.59961, -4.04398394, 820.075623, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+  	end  
+	})
 
 bTab:AddButton({
 	Name = "auto win",
@@ -920,8 +983,22 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2328.599
 	})
 
 local Section = bTab:AddSection({
-	Name = "Part3"
+	Name = "Kaito3"
 })
+
+bTab:AddButton({
+	Name = "tp to butterfly",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2465.76929, 29.0920906, 1938.5603, -0.468699157, -7.66659269e-08, 0.883357823, 1.73660304e-08, 1, 9.60034185e-08, -0.883357823, 6.03371433e-08, -0.468699157)
+        end  
+	})
+
+bTab:AddButton({
+	Name = "tp to exit",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2411.71362, -23.0311146, 2019.91846, -0.998449802, 1.23823236e-08, 0.0556594022, 1.28944428e-08, 1, 8.84181972e-09, -0.0556594022, 9.54581036e-09, -0.998449802)
+        end  
+	})
 
 bTab:AddButton({
 	Name = "auto win",
@@ -930,9 +1007,59 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2411.874
   	end  
 	})
 
+bTab:AddButton({
+	Name = "esp Monster",
+	Callback = function()
+-- ตรวจสอบว่า GameAI โฟลเดอร์อยู่ใน Workspace หรือไม่
+local gameAIFolder = workspace:FindFirstChild("GameAI")
+
+if gameAIFolder then
+    -- วนลูปเพื่อแสดงรายการสิ่งที่อยู่ในโฟลเดอร์ GameAI
+    for _, item in pairs(gameAIFolder:GetChildren()) do
+        if item:IsA("Model") then  -- ตรวจสอบว่าเป็นโมเดลหรือไม่
+            -- ลบ Highlight เดิมถ้ามี
+            local existingHighlight = item:FindFirstChildOfClass("Highlight")
+            if existingHighlight then
+                existingHighlight:Destroy()
+            end
+            
+            -- สร้าง Highlight ใหม่
+            local highlight = Instance.new("Highlight")
+            highlight.Name = "Highlight"
+            highlight.Parent = item
+            highlight.FillColor = Color3.new(1, 0, 0)  -- สีแดง
+            highlight.FillTransparency = 0.5  -- โปร่งใส 50%
+            highlight.OutlineColor = Color3.new(1, 0, 0)  -- สีแดง
+            highlight.OutlineTransparency = 0  -- ไม่มีความโปร่งใสของขอบ
+        end
+    end
+else
+    print("ไม่พบโฟลเดอร์ GameAI ใน Workspace")
+end
+        end  
+	})
+end
+
+local allowedPlaceIds = {6682163754}
+
+if table.find(allowedPlaceIds, game.PlaceId) then
 local Section = bTab:AddSection({
-	Name = "Part4"
+	Name = "Mihari"
 })
+
+bTab:AddButton({
+	Name = "tp to key",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(17.420805, 36.3822899, 93.5418167, 0.156089664, 2.63637894e-08, 0.987742901, 7.19953945e-08, 1, -3.806813e-08, -0.987742901, 7.70549775e-08, 0.156089664)
+        end  
+	})
+
+bTab:AddButton({
+	Name = "tp to door",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(62.742836, 36.3822899, 74.2366714, -0.0745322406, -3.80412618e-10, -0.997218609, -9.07953002e-09, 1, 2.97131569e-10, 0.997218609, 9.07642228e-09, -0.0745322406)
+        end  
+	})
 
 bTab:AddButton({
 	Name = "auto win",
@@ -942,7 +1069,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(180.1597
 	})
 
 local Section = bTab:AddSection({
-	Name = "Part5"
+	Name = "Mihari1"
 })
 
 bTab:AddButton({
@@ -952,8 +1079,207 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(242.7717
   	end  
 	})
 
+bTab:AddButton({
+	Name = "esp item",
+	Callback = function()
+local function createHighlight(handle)
+    local highlight = Instance.new("Highlight")
+    highlight.Name = "Highlight"
+    highlight.Parent = handle
+    highlight.FillColor = Color3.new(0, 1, 0) -- สีเขียว
+    highlight.FillTransparency = 0.5 -- ความโปร่งใส
+    highlight.OutlineColor = Color3.new(0, 1, 0) -- สีเขียวสำหรับเส้นขอบ
+    highlight.OutlineTransparency = 0 -- ความโปร่งใสของเส้นขอบ
+end
+
+local function createESP(giver, handle, height)
+    local espText = Instance.new("BillboardGui")
+    espText.Name = "ESP"
+    espText.Size = UDim2.new(1, 0, 1, 0)
+    espText.Adornee = handle
+    espText.AlwaysOnTop = true
+
+    -- ปรับตำแหน่ง ESP ให้สูงขึ้น
+    espText.StudsOffset = Vector3.new(0, height, 0) -- กำหนดความสูงที่ต้องการ
+
+    local textLabel = Instance.new("TextLabel")
+    textLabel.Size = UDim2.new(0, 25, 0, 25)
+    textLabel.BackgroundTransparency = 1
+    textLabel.Text = giver.Name
+    textLabel.TextColor3 = Color3.new(0, 1, 0) -- สีเขียว
+    textLabel.TextScaled = true
+    textLabel.Parent = espText
+
+    espText.Parent = handle
+end
+
+local giversFolder = game.Workspace:FindFirstChild("Givers")
+
+if giversFolder then
+    local espHeight = 2 -- ตั้งค่าความสูงของ ESP ที่นี่
+
+    for _, giver in pairs(giversFolder:GetChildren()) do
+        local handle = giver:FindFirstChild("Handle")
+
+        if handle then
+            -- ลบ Highlight ที่มีอยู่แล้ว
+            local existingHighlight = handle:FindFirstChildOfClass("Highlight")
+            if existingHighlight then existingHighlight:Destroy() end
+            
+            createHighlight(handle)
+
+            -- ลบ ESP ที่มีอยู่แล้ว
+            local existingESP = handle:FindFirstChild("ESP")
+            if existingESP then existingESP:Destroy() end
+
+            createESP(giver, handle, espHeight) -- ส่งค่าความสูงไปยังฟังก์ชัน createESP
+
+            print(giver.Name .. " ได้เพิ่ม Highlight และ ESP ใหม่ให้กับ Handle")
+        else
+            print(giver.Name .. " ไม่มี Handle")
+        end
+    end
+else
+    print("ไม่มีโฟลเดอร์ Givers ใน Workspace")
+end
+
+local part = workspace:FindFirstChild("Rose") -- ค้นหา Part ที่ชื่อ Rose ใน Workspace
+
+if part then
+    local handle = part:FindFirstChild("Handle") -- ค้นหา Object ที่ชื่อ Handle ภายใน Rose
+    if handle then
+        print("Found Handle inside Rose")
+        
+        -- ลบ Highlight และ BillboardGui ที่มีอยู่เดิม ถ้ามี
+        local oldHighlight = handle:FindFirstChild("Highlight")
+        if oldHighlight then
+            oldHighlight:Destroy()
+        end
+        
+        local oldBillboardGui = handle:FindFirstChild("BillboardGui")
+        if oldBillboardGui then
+            oldBillboardGui:Destroy()
+        end
+
+        -- เพิ่ม Highlight ใหม่
+        local highlight = Instance.new("Highlight")
+        highlight.Adornee = handle
+        highlight.Parent = handle
+        highlight.FillTransparency = 1 -- ทำให้โปร่งใสข้างใน
+        highlight.OutlineColor = Color3.fromRGB(0, 255, 0) -- สีเขียว
+        highlight.OutlineTransparency = 0 -- เส้นขอบไม่โปร่งใส
+
+        -- เพิ่ม ESP Text (BillboardGui) ใหม่
+        local billboardGui = Instance.new("BillboardGui")
+        billboardGui.Parent = handle
+        billboardGui.Adornee = handle
+        billboardGui.Size = UDim2.new(0, 25, 0, 25) -- ขนาดของ BillboardGui
+        billboardGui.StudsOffset = Vector3.new(0, 2, 0) -- ยกขึ้นมาด้านบน Handle
+        billboardGui.AlwaysOnTop = true -- ทำให้ข้อความอยู่ด้านบนเสมอ
+
+        local textLabel = Instance.new("TextLabel")
+        textLabel.Parent = billboardGui
+        textLabel.Size = UDim2.new(1, 0, 1, 0)
+        textLabel.BackgroundTransparency = 1 -- ทำให้ไม่มีพื้นหลัง
+        textLabel.Text = "Rose"
+        textLabel.TextColor3 = Color3.fromRGB(0, 255, 0) -- สีเขียว
+        textLabel.TextTransparency = 0 -- ไม่โปร่งใส
+        textLabel.TextScaled = true -- ทำให้ขนาดตัวอักษรปรับอัตโนมัติตามขนาดกล่อง
+
+    else
+        print("Handle not found inside Rose")
+    end
+else
+    print("Part 'Rose' not found in Workspace")
+end
+
+-- ค้นหา Holder ทั้งหมดใน Workspace
+local holders = game.Workspace:GetChildren()
+
+for _, holder in ipairs(holders) do
+    -- ตรวจสอบว่าเป็น Holder หรือไม่
+    if holder:IsA("Model") and holder.Name == "Holder" then
+        -- ลบ Highlight เก่า
+        local oldHighlight = holder:FindFirstChildOfClass("Highlight")
+        if oldHighlight then
+            oldHighlight:Destroy()
+        end
+
+        -- สร้าง Highlight ใหม่
+        local highlight = Instance.new("Highlight")
+        highlight.Parent = holder
+        highlight.FillTransparency = 1 -- ข้างในโปร่งใส
+        highlight.OutlineColor = Color3.fromRGB(0, 255, 0) -- เส้นขอบสีเขียว
+        highlight.OutlineTransparency = 0 -- เส้นขอบไม่โปร่งใส
+
+        -- ลบ BillboardGui (ESP Text) เก่า
+        local oldBillboard = holder:FindFirstChild("HolderBillboard")
+        if oldBillboard then
+            oldBillboard:Destroy()
+        end
+
+        -- สร้าง BillboardGui (ESP Text) ใหม่
+        local billboardGui = Instance.new("BillboardGui")
+        billboardGui.Name = "HolderBillboard"
+        billboardGui.Adornee = holder -- ทำให้ BillboardGui ยึดกับ Holder
+        billboardGui.Size = UDim2.new(0, 25, 0, 25)
+        billboardGui.StudsOffset = Vector3.new(0, 3, 0) -- ยกขึ้นเล็กน้อย
+        billboardGui.AlwaysOnTop = true -- ให้แสดงผลตลอดเวลา
+        billboardGui.Parent = holder
+
+        -- เพิ่ม TextLabel สำหรับ ESP Text
+        local textLabel = Instance.new("TextLabel")
+        textLabel.Size = UDim2.new(1, 0, 1, 0)
+        textLabel.BackgroundTransparency = 1
+        textLabel.Text = "Holder"
+        textLabel.TextColor3 = Color3.fromRGB(0, 255, 0) -- สีเขียว
+        textLabel.TextScaled = true
+        textLabel.Parent = billboardGui
+
+        print("Highlight and ESP Text added to " .. holder.Name)
+    end
+end
+        end  
+	})
+
+bTab:AddButton({
+	Name = "esp Monster",
+	Callback = function()
+-- ตรวจสอบว่า GameAI โฟลเดอร์อยู่ใน Workspace หรือไม่
+local gameAIFolder = workspace:FindFirstChild("GameAI")
+
+if gameAIFolder then
+    -- วนลูปเพื่อแสดงรายการสิ่งที่อยู่ในโฟลเดอร์ GameAI
+    for _, item in pairs(gameAIFolder:GetChildren()) do
+        if item:IsA("Model") and item.Name == "AI" then  -- ตรวจสอบว่าเป็นโมเดลและชื่อว่า AI หรือไม่
+            -- ลบ Highlight เดิมถ้ามี
+            local existingHighlight = item:FindFirstChildOfClass("Highlight")
+            if existingHighlight then
+                existingHighlight:Destroy()
+            end
+            
+            -- สร้าง Highlight ใหม่
+            local highlight = Instance.new("Highlight")
+            highlight.Name = "Highlight"
+            highlight.Parent = item
+            highlight.FillColor = Color3.new(1, 0, 0)  -- สีแดง
+            highlight.FillTransparency = 0.5  -- โปร่งใส 50%
+            highlight.OutlineColor = Color3.new(1, 0, 0)  -- สีแดง
+            highlight.OutlineTransparency = 0  -- ไม่มีความโปร่งใสของขอบ
+        end
+    end
+else
+    print("ไม่พบโฟลเดอร์ GameAI ใน Workspace")
+end
+        end  
+	})
+end
+
+local allowedPlaceIds = {6682164423}
+
+if table.find(allowedPlaceIds, game.PlaceId) then
 local Section = bTab:AddSection({
-	Name = "Part6"
+	Name = "omukade"
 })
 
 bTab:AddButton({
@@ -964,7 +1290,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(288.6702
 	})
 
 local Section = bTab:AddSection({
-	Name = "Part7"
+	Name = "omukade1"
 })
 
 bTab:AddButton({
@@ -974,8 +1300,104 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-653.394
   	end  
 	})
 
+bTab:AddButton({
+	Name = "esp item",
+	Callback = function()
+local keyModel = game.Workspace:FindFirstChild("Key1") -- ค้นหา Model ที่ชื่อ Key1
+
+if keyModel and keyModel:IsA("Model") then
+    local handle = keyModel:FindFirstChild("Handle") -- ค้นหา Handle ใน Model Key1
+    
+    if handle then
+        -- ตรวจสอบและจัดการ Highlight
+        local oldHighlight = handle:FindFirstChildOfClass("Highlight")
+        if oldHighlight then
+            oldHighlight:Destroy() -- ลบ Highlight อันเดิมถ้ามี
+        end
+        
+        -- เพิ่ม Highlight ใหม่
+        local highlight = Instance.new("Highlight")
+        highlight.Parent = handle
+        highlight.FillColor = Color3.new(0, 1, 0) -- สีข้างในเป็นสีเขียว
+        highlight.FillTransparency = 0.5 -- โปร่งใสบางส่วน
+        highlight.OutlineColor = Color3.new(0, 1, 0) -- สีขอบสีเขียว
+        highlight.OutlineTransparency = 0 -- ขอบไม่โปร่งใส
+
+        print("เพิ่ม Highlight ให้กับ Handle ใน Key1 แล้ว")
+    else
+        print("ไม่พบ Handle ใน Model Key1")
+    end
+else
+    print("ไม่พบ Model ที่ชื่อ Key1 ใน Workspace")
+end
+
+-- ฟังก์ชันสำหรับเพิ่ม Highlight ให้กับ MeshPart
+local function addHighlight(meshPart)
+    -- ตรวจสอบว่า MeshPart มี Highlight เดิมอยู่หรือไม่ ถ้ามีให้ลบทิ้ง
+    local oldHighlight = meshPart:FindFirstChildOfClass("Highlight")
+    if oldHighlight then
+        oldHighlight:Destroy()  -- ลบ Highlight เดิม
+    end
+
+    -- สร้าง Highlight ใหม่
+    local highlight = Instance.new("Highlight")
+    highlight.Parent = meshPart  -- ตั้ง Parent เป็น MeshPart
+    highlight.FillTransparency = 0.5  -- ปรับความโปร่งใสของ Fill
+    highlight.FillColor = Color3.new(0, 1, 0)  -- สีเขียว (RGB: 0, 255, 0)
+    highlight.OutlineColor = Color3.new(0, 1, 0)  -- สีเขียวสำหรับเส้นขอบ
+    highlight.OutlineTransparency = 0  -- เส้นขอบโปร่งใสน้อยที่สุด
+end
+
+-- ฟังก์ชันสำหรับจัดการ CodeDoor แต่ละตัว
+local function processCodeDoor(codeDoor)
+    -- ใช้ GetDescendants() เพื่อดึง Object ทั้งหมดภายใน CodeDoor
+    for _, descendant in pairs(codeDoor:GetDescendants()) do
+        if descendant:IsA("MeshPart") then  -- ตรวจสอบว่าเป็น MeshPart หรือไม่
+            addHighlight(descendant)  -- เพิ่ม Highlight ให้ MeshPart
+            print("Highlight added to MeshPart: " .. descendant.Name)
+        end
+    end
+end
+
+-- ค้นหา Model ทั้งหมดที่ชื่อ CodeDoor ใน Workspace
+for _, obj in pairs(workspace:GetChildren()) do
+    if obj:IsA("Model") and obj.Name == "CodeDoor" then
+        processCodeDoor(obj)  -- จัดการ Model แต่ละตัว
+    end
+end
+        end  
+	})
+
+bTab:AddButton({
+	Name = "esp Monster",
+	Callback = function()
+local modelName = "omukadeMAIN"
+local model = game.Workspace:FindFirstChild(modelName)
+
+if model then
+    -- ตรวจสอบและลบ Highlight ที่มีอยู่เดิม (ถ้ามี)
+    local existingHighlight = model:FindFirstChildOfClass("Highlight")
+    if existingHighlight then
+        existingHighlight:Destroy()
+    end
+
+    -- สร้าง Highlight ใหม่
+    local highlight = Instance.new("Highlight")
+    highlight.Parent = model
+    highlight.FillColor = Color3.fromRGB(255, 0, 0)  -- สีขอบแดง
+    highlight.FillTransparency = 0.5  -- ความโปร่งใส (0 = ทึบ, 1 = โปร่งใส)
+    highlight.OutlineColor = Color3.fromRGB(255, 0, 0)  -- สีขอบนอกแดง
+    highlight.OutlineTransparency = 0  -- ขอบไม่โปร่งใส (0 = ไม่โปร่งใส)
+
+    print("Highlight added to " .. modelName)
+else
+    print("Model " .. modelName .. " is not found in Workspace.")
+end
+        end  
+	})
+
 local Section = bTab:AddSection({
-	Name = "Part8"
+	Name = "House"
 })
 
 bTab:AddButton({
@@ -984,6 +1406,7 @@ bTab:AddButton({
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-643.695007, 948.410156, -1491.67163, 0, 0, 1, 0, 1, -0, -1, 0, 0)
   	end  
 	})
+end
 
 local aTab = Window:MakeTab({
 	Name = "book1 chapter4",
@@ -991,7 +1414,7 @@ local aTab = Window:MakeTab({
 	PremiumOnly = false
 	})
 
-local Section = bTab:AddSection({
+local Section = aTab:AddSection({
 	Name = "รอมีเวลาาาาาาา"
 })
 
