@@ -994,6 +994,13 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2465.769
 	})
 
 bTab:AddButton({
+	Name = "tp to Butterfly stand",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2413.59937, -21.5496769, 1925.75586, -0.997784019, -7.23919724e-09, 0.0665356293, -1.3802218e-08, 1, -9.81795125e-08, -0.0665356293, -9.88802853e-08, -0.997784019)
+        end  
+	})
+
+bTab:AddButton({
 	Name = "tp to exit",
 	Callback = function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2411.71362, -23.0311146, 2019.91846, -0.998449802, 1.23823236e-08, 0.0556594022, 1.28944428e-08, 1, 8.84181972e-09, -0.0556594022, 9.54581036e-09, -0.998449802)
@@ -1065,11 +1072,11 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(62.74283
         end  
 	})
 
-bTab:AddButton({
-	Name = "auto win",
+fackTab:AddButton({
+	Name = "tp to exit",
 	Callback = function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(180.159744, 33.9944229, 185.300354, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-  	end  
+        end  
 	})
 
 local Section = bTab:AddSection({
