@@ -1,1447 +1,1052 @@
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local Window = OrionLib:MakeWindow({Name = "Fack HUB", HidePremium = false,  Introtext = "Fack HUB", SaveConfig = true, ConfigFolder = "Fack HUB"})
+local Window = Rayfield:CreateWindow({
+   Name = "Fack HUB",
+   Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
+   LoadingTitle = "The Mimic",
+   LoadingSubtitle = "by KENG",
+   Theme = "Default", -- Check https://docs.sirius.menu/rayfield/configuration/themes
 
-OrionLib:MakeNotification({
-	Name = "hey",
-	Content = "I thed it for the first just",
-	Image = "rbxassetid://4483345998",
-	TimeTime
-	})
+   DisableRayfieldPrompts = false,
+   DisableBuildWarnings = false, -- Prevents Rayfield from warning when the script has a version mismatch with the interface
 
-local aTab = Window:MakeTab({
-	Name = "book1 chapter1",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-	})
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName = nil, -- Create a custom folder for your hub/game
+      FileName = "Big Hub"
+   },
 
-local allowedPlaceIds = {6243699076, 6296321810, 6373539583, 6406571212, 6425178683, 6472459099, 6682163754, 6682164423}
+   Discord = {
+      Enabled = false, -- Prompt the user to join your Discord server if their executor supports it
+      Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ ABCD would be ABCD
+      RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+   },
+
+   KeySystem = false, -- Set this to true to use our key system
+   KeySettings = {
+      Title = "Untitled",
+      Subtitle = "Key System",
+      Note = "No method of obtaining the key is provided", -- Use this to tell the user how to get a key
+      FileName = "Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+      SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+      GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+      Key = {"Hello"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+   }
+})
+
+game:GetService("CoreGui")["Rayfield-Old"]:Destroy()
+
+local aTab = Window:CreateTab("b1c1", "rewind")
+
+local allowedPlaceIds = {6296321810}
 
 if table.find(allowedPlaceIds, game.PlaceId) then
 
-local Section = aTab:AddSection({
-	Name = "Hiachi1"
+local Section = aTab:CreateSection("Auto Win")
+
+local Button = aTab:CreateButton({
+   Name = "Auto Win",
+   Callback = function()
+      game.Players.LocalPlayer.character.HumanoidRootPart.CFrame = CFrame.new(3478.38696, 44.8275261, -1538.88599, 0, -1, 0, 1, 0, -0, 0, 0, 1)
+   end,
 })
 
-aTab:AddButton({
-	Name = "tp to key1",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(681.439636, 3.04999924, 484.75058, -0.0825096369, 3.73737947e-08, -0.996590316, 4.39090098e-10, 1, 3.74653126e-08, 0.996590316, 2.65365641e-09, -0.0825096369)
-        end  
-	})
+local Section = aTab:CreateSection("ESP")
 
-aTab:AddButton({
-	Name = "tp to door1",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(647.292786, 3.09999943, 128.6035, -0.0805395171, -8.44553298e-08, -0.996751428, -6.22915479e-08, 1, -7.96973012e-08, 0.996751428, 5.56704052e-08, -0.0805395171)
-        end  
-	})
-
-local Section = aTab:AddSection({
-	Name = "Hiachi2"
-})
-
-aTab:AddButton({
-	Name = "tp to key2",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(861.357788, 3.19499969, 215.660324, 0.997686386, -9.9876063e-09, 0.0679836348, 1.18294272e-08, 1, -2.66895501e-08, -0.0679836422, 2.74320104e-08, 0.997686386)
-        end  
-	})
-
-aTab:AddButton({
-	Name = "tp to door2",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(887.25293, 3.18499994, 252.147217, -0.0977587402, -4.0719069e-08, -0.995210171, 2.99488399e-08, 1, -4.38568968e-08, 0.995210171, -3.40927855e-08, -0.0977587402)
-        end  
-	})
-
-aTab:AddButton({
-	Name = "auto win",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(923.393372, -9.47075081, 162.191574, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-  	end  
-	})
-
-local Section = aTab:AddSection({
-	Name = "Hiachi3"
-})
-
-aTab:AddButton({
-	Name = "tp to key3",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3312.0918, 37.6461105, -1759.12, 0.999948502, 5.62790081e-09, 0.0101488996, -4.35019043e-09, 1, -1.2591849e-07, -0.0101488996, 1.25867857e-07, 0.999948502)
-        end  
-	})
-
-aTab:AddButton({
-	Name = "tp to exit",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3415.05591, 37.6461258, -1538.57166, 0.000509714417, 1.96306313e-08, -0.999999881, -5.85444493e-09, 1, 1.96276488e-08, 0.999999881, 5.8444396e-09, 0.000509714417)
-        end  
-	})
-
-aTab:AddButton({
-	Name = "auto win",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3448.49512, 34.576931, -1551.67749, -1, 0, 0, 0, 1, 0, 0, 0, -1)
-  	end  
-	})
-
-local Section = aTab:AddSection({
-	Name = "esp Hiachi"
-})
-
-aTab:AddButton({
-	Name = "esp all key",
-	Callback = function()
--- ตรวจสอบว่าโฟลเดอร์ Givers มีอยู่ใน Workspace หรือไม่
-local giversFolder = game.Workspace:FindFirstChild("Givers")
-
-if giversFolder then
-    -- รายชื่อ Key ที่ต้องการตรวจสอบ
-    local keys = {"Key1", "Key2", "Key3"}
-
-    -- วนลูปผ่าน Key ทั้งสาม
-    for _, keyName in pairs(keys) do
-        local key = giversFolder:FindFirstChild(keyName)
-
-        if key then
-            -- ตรวจสอบและลบ Highlight เก่าถ้ามี
-            local existingHighlight = key:FindFirstChildOfClass("Highlight")
-            if existingHighlight then
-                existingHighlight:Destroy()
+local Toggle = aTab:CreateToggle({
+   Name = "ESP item",
+   CurrentValue = false,
+   Flag = "Toggle1",
+   Callback = function(Value)
+      if Value then
+         for i, v in pairs(workspace.Givers:GetChildren()) do
+             if v:IsA("Model") and not v:FindFirstChild("Fack HUB") then
+                 if v:FindFirstChild("Handle") then
+                     local BillboardGui = Instance.new("BillboardGui")
+                     BillboardGui.Parent = v.Handle
+                     BillboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+                     BillboardGui.Active = true
+                     BillboardGui.Name = "Fack HUB"
+                     BillboardGui.AlwaysOnTop = true
+                     BillboardGui.LightInfluence = 1.000
+                     BillboardGui.Size = UDim2.new(0, 200, 0, 200)
+     
+                     local TextLabel = Instance.new("TextLabel")
+                     TextLabel.Parent = BillboardGui
+                     TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                     TextLabel.BackgroundTransparency = 1.000
+                     TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+                     TextLabel.BorderSizePixel = 0
+                     TextLabel.Position = UDim2.new(0, 0, 0.2, 0)
+                     TextLabel.Size = UDim2.new(0, 200, 0, 50)
+                     TextLabel.Font = Enum.Font.FredokaOne
+                     TextLabel.Text = v.Name
+                     TextLabel.TextColor3 = Color3.fromRGB(81, 255, 0)
+                     TextLabel.TextSize = 25
+                     TextLabel.TextStrokeTransparency = 0
+                     TextLabel.TextWrapped = true
+                 end
+             end
+         end
+      else
+         for i, v in pairs(workspace.Givers:GetDescendants()) do
+            if v:IsA("BillboardGui") and v.Name == "Fack HUB" then
+               v:Destroy()
             end
+         end
+      end
+   end,
+})
 
-            -- สร้าง Highlight ใหม่
-            local highlight = Instance.new("Highlight")
-            highlight.FillTransparency = 1 -- โปร่งใสข้างใน
-            highlight.OutlineColor = Color3.fromRGB(0, 255, 0) -- ขอบสีเขียว
-            highlight.Parent = key -- เพิ่ม Highlight ให้กับ Key
-
-            -- ตรวจสอบและลบ BillboardGui (ESP Text) เก่าถ้ามี
-            local existingESP = key:FindFirstChildOfClass("BillboardGui")
-            if existingESP then
-                existingESP:Destroy()
+local Toggle = aTab:CreateToggle({
+   Name = "ESP Monster",
+   CurrentValue = false,
+   Flag = "Toggle1", 
+   Callback = function(Value)
+      if Value then
+         for k, v in pairs(workspace.GameAI:GetChildren()) do
+            if v:IsA("Model") and not v:FindFirstChild("Fack HUB") then
+               local highlight = Instance.new("Highlight")
+               highlight.Parent = v
+               highlight.Name = "Fack HUB"
+               highlight.FillColor = Color3.fromRGB(255, 0, 0) 
+               highlight.OutlineColor = Color3.fromRGB(255, 0, 0)
+               highlight.FillTransparency = 0.5
+               highlight.OutlineTransparency = 0
+               highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
             end
-
-            -- สร้าง BillboardGui ใหม่ (สำหรับ ESP Text)
-            local esp = Instance.new("BillboardGui")
-            esp.Name = "ESPText"
-            esp.AlwaysOnTop = true -- ให้ตัวหนังสืออยู่ด้านบนเสมอ
-            esp.Size = UDim2.new(0, 25, 0, 25) -- ขนาดของกล่องแสดงผล
-            esp.StudsOffset = Vector3.new(0, 2, 0) -- ระยะห่างจากวัตถุ (เหนือขึ้นไป)
-
-            -- สร้าง TextLabel สำหรับแสดงชื่อ Key
-            local textLabel = Instance.new("TextLabel")
-            textLabel.Size = UDim2.new(1, 0, 1, 0)
-            textLabel.BackgroundTransparency = 1 -- พื้นหลังโปร่งใส
-            textLabel.Text = keyName -- แสดงชื่อของ Key
-            textLabel.TextColor3 = Color3.fromRGB(0, 255, 0) -- สีตัวอักษรสีเขียว
-            textLabel.TextScaled = true -- ให้ข้อความขยายเต็มกรอบ
-
-            -- เพิ่ม TextLabel เข้าไปใน BillboardGui
-            textLabel.Parent = esp
-
-            -- เพิ่ม BillboardGui เข้าไปใน Key
-            esp.Parent = key
-        else
-            print(keyName .. " ไม่พบใน Givers")
-        end
-    end
-else
-    print("ไม่พบโฟลเดอร์ Givers ใน Workspace")
-end
-        end  
-	})
-
-aTab:AddButton({
-	Name = "esp Hiachi",
-	Callback = function()
--- ตรวจสอบว่ามีโฟลเดอร์ GameAI ใน Workspace หรือไม่
-local gameAIFolder = workspace:FindFirstChild("GameAI")
-
-if gameAIFolder then
-    -- ตรวจสอบว่ามีโมเดลชื่อ AI ในโฟลเดอร์ GameAI หรือไม่
-    local aiModel = gameAIFolder:FindFirstChild("AI")
-    
-    if aiModel then
-        -- ตรวจสอบว่ามี Highlight อันเดิมอยู่หรือไม่
-        local existingHighlight = aiModel:FindFirstChildOfClass("Highlight")
-        
-        -- ถ้ามีให้ลบทิ้ง
-        if existingHighlight then
-            existingHighlight:Destroy()
-        end
-        
-        -- สร้าง Highlight ใหม่
-        local newHighlight = Instance.new("Highlight")
-        newHighlight.Parent = aiModel
-        
-        -- ตั้งค่าของ Highlight
-        newHighlight.FillColor = Color3.new(1, 0, 0) -- สีแดง (RGB: 1, 0, 0)
-        newHighlight.FillTransparency = 0.5 -- โปร่งใส 100%
-        newHighlight.OutlineColor = Color3.new(1, 0, 0) -- ขอบสีแดง
-        
-        print("เพิ่ม Highlight สีแดงให้โมเดล AI")
-    else
-        print("ไม่พบโมเดลชื่อ AI ในโฟลเดอร์ GameAI")
-    end
-else
-    print("ไม่พบโฟลเดอร์ GameAI ใน Workspace")
-end
-        end  
-	})
+         end
+      else
+         for k, v in pairs(workspace.GameAI:GetDescendants()) do
+            if v:IsA("Highlight") and v.Name == "Fack HUB" then
+               v:Destroy()
+            end
+         end
+      end
+   end,
+})
 end
 
 local allowedPlaceIds = {6301638949}
 
 if table.find(allowedPlaceIds, game.PlaceId) then
 
-local Section = aTab:AddSection({
-	Name = "Elevator"
+local Section = aTab:CreateSection("Auto win")
+
+local Button = aTab:CreateButton({
+   Name = "Auto Win",
+   Callback = function()
+      game.Players.LocalPlayer.character.HumanoidRootPart.CFrame = CFrame.new(1272.8075, 201.615051, -2537.38843, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+   end,
 })
 
-aTab:AddButton({
-	Name = "tp to door",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-165.229172, 61.4286423, -2322.59351, 0.583726048, 0.00830592401, 0.811908185, 0.0327253267, 0.998894513, -0.0337468795, -0.81129092, 0.0462688915, 0.582808971)
-        end  
-	})
+local Section = aTab:CreateSection("ESP")
 
-aTab:AddButton({
-	Name = "tp to Elevator 1",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-406.985504, 91.6366882, -3203.17749, 0.996930301, 3.6606405e-08, 0.0782942846, -4.13011172e-08, 1, 5.83430868e-08, -0.0782942846, -6.13976283e-08, 0.996930301)
-        end  
-	})
-
-aTab:AddButton({
-	Name = "tp to Elevator 2",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-377.501038, 128.649124, -2745.41138, -0.0168304071, -2.30491004e-08, -0.99985832, 1.29260558e-09, 1, -2.30741257e-08, 0.99985832, -1.68076941e-09, -0.0168304071)
-        end  
-	})
-
-aTab:AddButton({
-	Name = "tp to Elevator 3",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1272.8075, 201.615051, -2537.38843, 0, 0, 1, 0, 1, -0, -1, 0, 0)
-        end  
-	})
-
-aTab:AddButton({
-	Name = "auto win",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1272.8075, 201.615051, -2537.38843, 0, 0, 1, 0, 1, -0, -1, 0, 0)
-  	end  
-	})
-
-local Section = aTab:AddSection({
-	Name = "ESP"
+local Toggle = aTab:CreateToggle({
+   Name = "ESP Exit",
+   CurrentValue = false,
+   Flag = "Toggle1",
+   Callback = function(Value)
+      if Value then
+         for i, v in pairs(workspace.GroupTP:GetChildren()) do
+             if v:IsA("Part") and not v:FindFirstChild("Fack HUB") then
+                 if v.Name == "Touch2" then
+                     local BillboardGui = Instance.new("BillboardGui")
+                     BillboardGui.Parent = v
+                     BillboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+                     BillboardGui.Active = true
+                     BillboardGui.Name = "Fack HUB"
+                     BillboardGui.AlwaysOnTop = true
+                     BillboardGui.LightInfluence = 1.000
+                     BillboardGui.Size = UDim2.new(0, 200, 0, 200)
+     
+                     local TextLabel = Instance.new("TextLabel")
+                     TextLabel.Parent = BillboardGui
+                     TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                     TextLabel.BackgroundTransparency = 1.000
+                     TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+                     TextLabel.BorderSizePixel = 0
+                     TextLabel.Position = UDim2.new(0, 0, 0.2, 0)
+                     TextLabel.Size = UDim2.new(0, 200, 0, 50)
+                     TextLabel.Font = Enum.Font.FredokaOne
+                     TextLabel.Text = "Exit"
+                     TextLabel.TextColor3 = Color3.fromRGB(81, 255, 0)
+                     TextLabel.TextSize = 25
+                     TextLabel.TextStrokeTransparency = 0
+                     TextLabel.TextWrapped = true
+                 end
+             end
+         end
+      else
+         for i, v in pairs(workspace.GroupTP:GetDescendants()) do
+            if v:IsA("BillboardGui") and v.Name == "Fack HUB" then
+               v:Destroy()
+            end
+         end
+      end
+   end,
 })
 
-aTab:AddButton({
-	Name = "esp shizu and biwaki",
-	Callback = function()
--- ตรวจสอบว่ามีโฟลเดอร์ GameAI2 ใน Workspace หรือไม่
-local folder = game.Workspace:FindFirstChild("GameAI2")
-
-if folder and folder:IsA("Folder") then
-    -- วนลูปผ่านลูกของโฟลเดอร์เพื่อหา Model
-    for _, child in ipairs(folder:GetChildren()) do
-        if child:IsA("Model") then
-            -- ลบ Highlight เดิมถ้ามีอยู่
-            local existingHighlight = child:FindFirstChildOfClass("Highlight")
-            if existingHighlight then
-                existingHighlight:Destroy()
+local Toggle = aTab:CreateToggle({
+   Name = "ESP Monster",
+   CurrentValue = false,
+   Flag = "Toggle1", 
+   Callback = function(Value)
+      if Value then
+         for k, v in pairs(workspace.GameAI:GetChildren()) do
+            if v:IsA("Model") and not v:FindFirstChild("Fack HUB") then
+               local highlight = Instance.new("Highlight")
+               highlight.Parent = v
+               highlight.Name = "Fack HUB"
+               highlight.FillColor = Color3.fromRGB(255, 0, 0) 
+               highlight.OutlineColor = Color3.fromRGB(255, 0, 0)
+               highlight.FillTransparency = 0.5
+               highlight.OutlineTransparency = 0
+               highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
             end
-
-            -- สร้าง Highlight ใหม่
-            local highlight = Instance.new("Highlight")
-            highlight.Parent = child
-            highlight.OutlineColor = Color3.new(1, 0, 0) -- สีเส้นขอบสีแดง
-            highlight.FillColor = Color3.new(1, 0, 0) -- สีภายในสีแดง
-            highlight.OutlineTransparency = 0 -- ความโปร่งใสของเส้นขอบ (0 = ไม่โปร่งใส)
-            highlight.FillTransparency = 0.5 -- ความโปร่งใสของสีภายใน (0 = ไม่โปร่งใส)
-        end
-    end
-else
-    print("ไม่พบโฟลเดอร์ GameAI2 ใน Workspace")
-end
-        end  
-	})
-
-aTab:AddButton({
-	Name = "esp kuriko",
-	Callback = function()
--- ค้นหาโฟลเดอร์ GameAI ใน Workspace
-local gameAIFolder = workspace:FindFirstChild("GameAI")
-
--- ตรวจสอบว่าโฟลเดอร์ GameAI มีอยู่หรือไม่
-if gameAIFolder then
-    -- วนลูปผ่านลูกทั้งหมดในโฟลเดอร์ GameAI
-    for _, child in ipairs(gameAIFolder:GetChildren()) do
-        -- ตรวจสอบว่า child เป็น Model หรือไม่
-        if child:IsA("Model") then
-            -- ลบ Highlight เดิมถ้ามีอยู่
-            local existingHighlight = child:FindFirstChildOfClass("Highlight")
-            if existingHighlight then
-                existingHighlight:Destroy()
+         end
+		for k, v in pairs(workspace.GameAI2:GetChildren()) do
+            if v:IsA("Model") and not v:FindFirstChild("Fack HUB") then
+               local highlight = Instance.new("Highlight")
+               highlight.Parent = v
+               highlight.Name = "Fack HUB"
+               highlight.FillColor = Color3.fromRGB(255, 0, 0) 
+               highlight.OutlineColor = Color3.fromRGB(255, 0, 0)
+               highlight.FillTransparency = 0.5
+               highlight.OutlineTransparency = 0
+               highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
             end
-            
-            -- สร้าง Highlight ใหม่
-            local highlight = Instance.new("Highlight")
-            highlight.Parent = child
-            highlight.Adornee = child
-            
-            -- ตั้งค่าเส้นขอบและสี
-            highlight.OutlineColor = Color3.fromRGB(255, 0, 0) -- สีแดง
-            highlight.FillColor = Color3.fromRGB(255, 0, 0) -- สีแดง
-            highlight.OutlineTransparency = 0 -- ปรับความเข้ม
-            highlight.FillTransparency = 0.5 -- ความโปร่งใสของ Fill (ปรับได้ตามต้องการ)
-        end
-    end
-
-    print("เพิ่ม Highlight ให้กับโมเดลในโฟลเดอร์ GameAI เรียบร้อยแล้ว")
-else
-    print("ไม่พบโฟลเดอร์ GameAI ใน Workspace")
-end
-        end  
-	})
+         end
+      else
+         for k, v in pairs(workspace.GameAI:GetDescendants()) do
+            if v:IsA("Highlight") and v.Name == "Fack HUB" then
+               v:Destroy()
+            end
+         end
+	  	for k, v in pairs(workspace.GameAI2:GetDescendants()) do
+            if v:IsA("Highlight") and v.Name == "Fack HUB" then
+               v:Destroy()
+            	end
+        	end
+		end
+   end,
+})
 end
 
-local mTab = Window:MakeTab({
-	Name = "book1 chapter2",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-	})
+local bTab = Window:CreateTab("b1c2", "rewind")
 
-local allowedPlaceIds = {6243699076, 6296321810, 6301638949, 6373539583, 6472459099, 6682163754, 6682164423}
+local allowedPlaceIds = {6373539583}
 
 if table.find(allowedPlaceIds, game.PlaceId) then
-local Section = mTab:AddSection({
-	Name = "megumi"
+
+local Section = bTab:CreateSection("Auto Win")
+
+local Button = bTab:CreateButton({
+   Name = "Auto Win",
+   Callback = function()
+      game.Players.LocalPlayer.character.HumanoidRootPart.CFrame = CFrame.new(68.3324432, 61.9521561, -1614.55261, 0, 0, 1, 1, 0, 0, 0, 1, 0)
+   end,
 })
 
-mTab:AddButton({
-	Name = "tp to key",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(151.868301, 26.5226593, -426.401764, -0.995897055, 6.48964544e-08, 0.0904929414, 6.23485548e-08, 1, -3.09827008e-08, -0.0904929414, -2.52134775e-08, -0.995897055)
-        end  
-	})
+local Section = bTab:CreateSection("ESP")
 
-mTab:AddButton({
-	Name = "tp to door",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(124.408913, 14.7293377, -339.946167, 0.152997911, 7.35016314e-09, -0.988226473, -3.12186776e-10, 1, 7.38939798e-09, 0.988226473, -8.2205126e-10, 0.152997926)
-        end  
-	})
+local Toggle = bTab:CreateToggle({
+   Name = "ESP item",
+   CurrentValue = false,
+   Flag = "Toggle1",
+   Callback = function(Value)
+      if Value then
+         for i, v in pairs(workspace:GetChildren()) do
+             if v:IsA("Model") and v.Name == "Key1" and not v:FindFirstChild("Fack HUB") then
+                 local handle = v:FindFirstChild("Handle")
+                 if handle then
+                     local BillboardGui = Instance.new("BillboardGui")
+                     BillboardGui.Parent = handle
+                     BillboardGui.Name = "Fack HUB"
+                     BillboardGui.AlwaysOnTop = true
+                     BillboardGui.LightInfluence = 0
+                     BillboardGui.Size = UDim2.new(0, 100, 0, 50)
+                     BillboardGui.StudsOffset = Vector3.new(0, 2, 0)
 
-mTab:AddButton({
-	Name = "tp to exit",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(28.4002438, 26.3954468, -442.685883, 0.999635875, 3.40334054e-08, 0.0269855484, -3.11963362e-08, 1, -1.05553802e-07, -0.0269855484, 1.04673511e-07, 0.999635875)
-        end  
-	})
+                     local TextLabel = Instance.new("TextLabel")
+                     TextLabel.Parent = BillboardGui
+                     TextLabel.BackgroundTransparency = 1
+                     TextLabel.Size = UDim2.new(1, 0, 1, 0)
+                     TextLabel.Font = Enum.Font.FredokaOne
+                     TextLabel.Text = v.Name
+                     TextLabel.TextColor3 = Color3.fromRGB(81, 255, 0)
+                     TextLabel.TextSize = 20
+                     TextLabel.TextStrokeTransparency = 0
+                 end
+             end
+         end
 
-mTab:AddButton({
-	Name = "auto win",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(26.5080051, 33.504612, -536.645996, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-  	end  
-	})
+         for i, v in pairs(workspace:GetChildren()) do
+             if v:IsA("Model") and v.Name == "Butterfly" and not v:FindFirstChild("Fack HUB") then
+                 local part = v.PrimaryPart or v:FindFirstChildWhichIsA("BasePart")
+                 if part then
+                     local BillboardGui = Instance.new("BillboardGui")
+                     BillboardGui.Parent = part
+                     BillboardGui.Name = "Fack HUB"
+                     BillboardGui.AlwaysOnTop = true
+                     BillboardGui.LightInfluence = 0
+                     BillboardGui.Size = UDim2.new(0, 100, 0, 50)
+                     BillboardGui.StudsOffset = Vector3.new(0, 2, 0)
 
-local Section = mTab:AddSection({
-	Name = "kusonoki"
-})
-
-mTab:AddButton({
-	Name = "tp to Front door",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(236.193542, 51.0303688, -915.864624, 0.999999583, 1.07941309e-08, 0.00089055358, -1.07809379e-08, 1, -1.48195003e-08, -0.000890553638, 1.48098929e-08, 0.999999583)
-        end  
-	})
-
-mTab:AddButton({
-	Name = "tp to butterfly",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(90.8242035, 57.4451866, -1433.41614, -0.116371594, 2.69917582e-08, 0.993205667, -3.87303061e-08, 1, -3.17143432e-08, -0.993205667, -4.21578115e-08, -0.116371594)
-        end  
-	})
-
-mTab:AddButton({
-	Name = "tp to door",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(233.105103, 51.0659294, -1434.06836, 0.996198237, -4.32539018e-08, -0.0871153474, 4.61693297e-08, 1, 3.14514637e-08, 0.0871153474, -3.53539491e-08, 0.996198237)
-        end  
-	})
-
-mTab:AddButton({
-	Name = "tp to butterfly",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(217.437378, 52.4775429, -1640.61084, 0.737928629, 5.13094065e-08, 0.674878776, -1.7883611e-08, 1, -5.6473219e-08, -0.674878776, 2.96039335e-08, 0.737928629)
-        end  
-	})
-
-mTab:AddButton({
-	Name = "tp to exit",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(64.7862473, 55.2783432, -1579.62939, 0.998826742, 2.409943e-08, -0.0484268554, -1.86768521e-08, 1, 1.12427088e-07, 0.0484268554, -1.11390719e-07, 0.998826742)
-        end  
-	})
-
-mTab:AddButton({
-	Name = "auto win",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(68.3324432, 61.9521561, -1614.55261, 0, 0, 1, 1, 0, 0, 0, 1, 0)
-  	end  
-	})
-
-local Section = mTab:AddSection({
-	Name = "ESP"
-})
-
-mTab:AddButton({
-	Name = "esp item",
-	Callback = function()
-local modelName = "Key1"
-local model = workspace:FindFirstChild(modelName)
-
-if model then
-    print(modelName .. " exists in the Workspace.")
-
-    -- ตรวจสอบว่ามี Highlights เดิมอยู่หรือไม่ ถ้ามีก็ลบทิ้ง
-    local oldHighlight = model:FindFirstChildOfClass("Highlight")
-    if oldHighlight then
-        oldHighlight:Destroy()
-    end
-
-    -- สร้าง Highlights ใหม่
-    local highlight = Instance.new("Highlight")
-    highlight.Name = "Key1Highlight"  -- ตั้งชื่อ Highlights
-    highlight.Parent = model           -- กำหนด parent เป็น Model ที่ชื่อ Key1
-    highlight.FillTransparency = 0.8   -- ความโปร่งใสของพื้นที่ข้างใน
-    highlight.FillColor = Color3.new(0, 1, 0)  -- สีพื้นที่ข้างใน (สีเขียว)
-    highlight.OutlineColor = Color3.new(0, 1, 0) -- สีของเส้นขอบ (สีเขียว)
-    highlight.OutlineTransparency = 0 -- ความโปร่งใสของเส้นขอบ
-
-    -- ตรวจสอบว่ามี ESP Text (BillboardGui) เดิมอยู่หรือไม่ ถ้ามีก็ลบทิ้ง
-    local oldESP = model:FindFirstChild("ESPText")
-    if oldESP then
-        oldESP:Destroy()
-    end
-
-    -- สร้าง BillboardGui ใหม่สำหรับ ESP Text
-    local billboardGui = Instance.new("BillboardGui")
-    billboardGui.Name = "ESPText" -- ตั้งชื่อ BillboardGui
-    billboardGui.Parent = model -- กำหนด parent เป็น Model ที่ชื่อ Key1
-    billboardGui.AlwaysOnTop = true -- ให้แสดงผลตลอดเวลา
-    billboardGui.Size = UDim2.new(0, 25, 0, 25) -- ขนาดของ GUI
-    billboardGui.StudsOffset = Vector3.new(0, 3, 0) -- ย้ายตำแหน่ง GUI เหนือ Model
-
-    -- สร้าง TextLabel สำหรับแสดงชื่อ Model
-    local textLabel = Instance.new("TextLabel")
-    textLabel.Parent = billboardGui -- กำหนด parent เป็น BillboardGui
-    textLabel.Size = UDim2.new(1, 0, 1, 0) -- ขนาดของ TextLabel
-    textLabel.BackgroundTransparency = 1 -- พื้นหลังโปร่งใส
-    textLabel.Text = "Key" -- แสดงคำว่า "Key"
-    textLabel.TextColor3 = Color3.new(0, 1, 0) -- สีของข้อความเป็นสีเขียว
-    textLabel.TextScaled = true -- ปรับขนาดตัวอักษรให้พอดีกับ TextLabel
-
-else
-    print(modelName .. " does not exist in the Workspace.")
-end
-
-local function addESPToButterflies()
-    local workspace = game:GetService("Workspace") -- เข้าถึง Workspace
-    local butterflies = {} -- สร้างตารางเก็บโมเดล Butterfly
-
-    -- ค้นหาโมเดลชื่อ "Butterfly" ทั้งหมดใน Workspace
-    for _, model in ipairs(workspace:GetChildren()) do
-        if model:IsA("Model") and model.Name == "Butterfly" then
-            table.insert(butterflies, model) -- เพิ่มโมเดลลงในตาราง
-        end
-    end
-
-    -- สำหรับแต่ละโมเดลที่เจอ
-    for _, butterfly in ipairs(butterflies) do
-        -- ถ้ามี ESP Text อันเดิมอยู่ให้ลบทิ้ง
-        local existingESP = butterfly:FindFirstChild("ESPText")
-        if existingESP then
-            existingESP:Destroy()
-        end
-
-        -- สร้าง ESP Text ใหม่
-        local espText = Instance.new("BillboardGui")
-        espText.Name = "ESPText"
-        espText.Adornee = butterfly.PrimaryPart -- ทำให้ ESP ชี้ไปที่ส่วนหลักของโมเดล
-        espText.Size = UDim2.new(0, 25, 0, 25) -- ขนาดของ ESP
-        espText.AlwaysOnTop = true -- ให้ ESP อยู่ข้างบนตลอดเวลา
-
-        local textLabel = Instance.new("TextLabel")
-        textLabel.Size = UDim2.new(1, 0, 1, 0)
-        textLabel.BackgroundTransparency = 1 -- ปรับความโปร่งใสของพื้นหลัง
-        textLabel.TextColor3 = Color3.fromRGB(0, 255, 0) -- สีเขียว
-        textLabel.TextScaled = true -- ปรับขนาดข้อความอัตโนมัติ
-        
-        -- แสดงชื่อเป็น "Butterfly" สำหรับทุกโมเดล
-        textLabel.Text = "Butterfly"
-        
-        -- เพิ่ม TextLabel ลงใน BillboardGui
-        textLabel.Parent = espText
-        espText.Parent = butterfly -- เพิ่ม BillboardGui ลงในโมเดล
-    end
-
-    if #butterflies > 0 then
-        print("ได้เพิ่ม ESP Text ให้กับโมเดล 'Butterfly'")
-    else
-        print("ไม่มีโมเดลชื่อ 'Butterfly' ใน Workspace")
-    end
-end
-
--- เรียกใช้งานฟังก์ชัน
-addESPToButterflies()
-        end  
-	})
-
-mTab:AddButton({
-	Name = "esp Monster",
-	Callback = function()
--- ตรวจสอบว่า GameAI โฟลเดอร์อยู่ใน Workspace หรือไม่
-local gameAIFolder = workspace:FindFirstChild("GameAI")
-
-if gameAIFolder then
-    -- วนลูปเพื่อแสดงรายการสิ่งที่อยู่ในโฟลเดอร์ GameAI
-    for _, item in pairs(gameAIFolder:GetChildren()) do
-        if item:IsA("Model") then  -- ตรวจสอบว่าเป็นโมเดลหรือไม่
-            -- ลบ Highlight เดิมถ้ามี
-            local existingHighlight = item:FindFirstChildOfClass("Highlight")
-            if existingHighlight then
-                existingHighlight:Destroy()
+                     local TextLabel = Instance.new("TextLabel")
+                     TextLabel.Parent = BillboardGui
+                     TextLabel.BackgroundTransparency = 1
+                     TextLabel.Size = UDim2.new(1, 0, 1, 0)
+                     TextLabel.Font = Enum.Font.FredokaOne
+                     TextLabel.Text = v.Name
+                     TextLabel.TextColor3 = Color3.fromRGB(81, 255, 0)
+                     TextLabel.TextSize = 20
+                     TextLabel.TextStrokeTransparency = 0
+                 end
+             end
+         end
+      else
+         local keyModel = workspace:FindFirstChild("Key1")
+         if keyModel then
+            for i, v in pairs(keyModel:GetDescendants()) do
+                if v:IsA("BillboardGui") and v.Name == "Fack HUB" then
+                    v:Destroy()
+                end
             end
-            
-            -- สร้าง Highlight ใหม่
-            local highlight = Instance.new("Highlight")
-            highlight.Name = "Highlight"
-            highlight.Parent = item
-            highlight.FillColor = Color3.new(1, 0, 0)  -- สีแดง
-            highlight.FillTransparency = 0.5  -- โปร่งใส 50%
-            highlight.OutlineColor = Color3.new(1, 0, 0)  -- สีแดง
-            highlight.OutlineTransparency = 0  -- ไม่มีความโปร่งใสของขอบ
-        end
-    end
-else
-    print("ไม่พบโฟลเดอร์ GameAI ใน Workspace")
-end
-        end  
-	})
+         end
+
+         local butterflyModel = workspace:FindFirstChild("Butterfly")
+         if butterflyModel then
+            for i, v in pairs(butterflyModel:GetDescendants()) do
+                if v:IsA("BillboardGui") and v.Name == "Fack HUB" then
+                    v:Destroy()
+                end
+            end
+         end
+      end
+   end,
+})
+
+
+local Toggle = bTab:CreateToggle({
+   Name = "ESP Monster",
+   CurrentValue = false,
+   Flag = "Toggle1", 
+   Callback = function(Value)
+      if Value then
+         for k, v in pairs(workspace.GameAI:GetChildren()) do
+            if v:IsA("Model") and not v:FindFirstChild("Fack HUB") then
+               local highlight = Instance.new("Highlight")
+               highlight.Parent = v
+               highlight.Name = "Fack HUB"
+               highlight.FillColor = Color3.fromRGB(255, 0, 0) 
+               highlight.OutlineColor = Color3.fromRGB(255, 0, 0)
+               highlight.FillTransparency = 0.5
+               highlight.OutlineTransparency = 0
+               highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+            end
+         end
+      else
+         for k, v in pairs(workspace.GameAI:GetDescendants()) do
+            if v:IsA("Highlight") and v.Name == "Fack HUB" then
+               v:Destroy()
+            end
+         end
+      end
+   end,
+})
 end
 
 local allowedPlaceIds = {6406571212}
 
 if table.find(allowedPlaceIds, game.PlaceId) then
-local Section = mTab:AddSection({
-	Name = "Hirosa1"
+
+local Section = bTab:CreateSection("Auto Win")
+
+local Button = bTab:CreateButton({
+   Name = "Auto Win",
+   Callback = function()
+      game.Players.LocalPlayer.character.HumanoidRootPart.CFrame = CFrame.new(232.938049, 101.941238, -585.303162, 0.999673665, 3.42568853e-08, -0.0255460832, -3.430997e-08, 1, -1.63968195e-09, 0.0255460832, 2.51563215e-09, 0.999673665)
+   end,
 })
 
-mTab:AddButton({
-	Name = "tp to butterfly 1",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(432.092804, 59.174942, 378.5383, 1.71661377e-05, -0.187229261, -0.982316256, -0.428163469, 0.887719095, -0.169206545, 0.903701305, 0.420594811, -0.0801495314)
-        end  
-	})
+local Section = bTab:CreateSection("ESP")
 
-mTab:AddButton({
-	Name = "tp to exit",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(154.011459, 93.9802094, 52.7835541, 0.999519885, 3.1999253e-08, -0.0309840925, -3.40341053e-08, 1, -6.51466507e-08, 0.0309840925, 6.61698891e-08, 0.999519885)
-        end  
-	})
+local Toggle = bTab:CreateToggle({
+   Name = "ESP item",
+   CurrentValue = false,
+   Flag = "Toggle1",
+   Callback = function(Value)
+      if Value then
+         for i, v in pairs(workspace:GetChildren()) do
+             if v:IsA("Model") and v.Name == "Key1" and not v:FindFirstChild("Fack HUB") then
+                 local handle = v:FindFirstChild("Handle")
+                 if handle then
+                     local BillboardGui = Instance.new("BillboardGui")
+                     BillboardGui.Parent = handle
+                     BillboardGui.Name = "Fack HUB"
+                     BillboardGui.AlwaysOnTop = true
+                     BillboardGui.LightInfluence = 0
+                     BillboardGui.Size = UDim2.new(0, 100, 0, 50)
+                     BillboardGui.StudsOffset = Vector3.new(0, 2, 0)
 
-mTab:AddButton({
-	Name = "auto win",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(412.624054, 104.1931, -68.1834106, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-  	end  
-	})
+                     local TextLabel = Instance.new("TextLabel")
+                     TextLabel.Parent = BillboardGui
+                     TextLabel.BackgroundTransparency = 1
+                     TextLabel.Size = UDim2.new(1, 0, 1, 0)
+                     TextLabel.Font = Enum.Font.FredokaOne
+                     TextLabel.Text = v.Name
+                     TextLabel.TextColor3 = Color3.fromRGB(81, 255, 0)
+                     TextLabel.TextSize = 20
+                     TextLabel.TextStrokeTransparency = 0
+                 end
+             end
+         end
 
-local Section = mTab:AddSection({
-	Name = "Hirosa2"
-})
+         for i, v in pairs(workspace:GetChildren()) do
+             if v:IsA("Model") and v.Name == "Butterfly" and not v:FindFirstChild("Fack HUB") then
+                 local part = v.PrimaryPart or v:FindFirstChildWhichIsA("BasePart")
+                 if part then
+                     local BillboardGui = Instance.new("BillboardGui")
+                     BillboardGui.Parent = part
+                     BillboardGui.Name = "Fack HUB"
+                     BillboardGui.AlwaysOnTop = true
+                     BillboardGui.LightInfluence = 0
+                     BillboardGui.Size = UDim2.new(0, 100, 0, 50)
+                     BillboardGui.StudsOffset = Vector3.new(0, 2, 0)
 
-mTab:AddButton({
-	Name = "key",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(156.217789, 101.883438, -563.679504, 0.0313020013, -8.1898005e-10, -0.999509931, 2.5835158e-08, 1, -1.02929401e-11, 0.999509931, -2.58221746e-08, 0.0313020013)
-        end  
-	})
-
-mTab:AddButton({
-	Name = "tp to door",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(291.769379, 101.94133, -553.294434, 0.999432802, 7.79543718e-09, -0.0336755998, -5.378757e-09, 1, 7.18541386e-08, 0.0336755998, -7.16322504e-08, 0.999432802)
-        end  
-	})
-
-mTab:AddButton({
-	Name = "tp to butterfly 2",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(257.64801, 94.6855774, -850.475769, 0, 0, -1, 0, 1, 0, 1, 0, 0)
-        end  
-	})
-
-mTab:AddButton({
-	Name = "tp to exit",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(234.648117, 101.941269, -554.368774, 0.999833047, -7.73614062e-08, 0.0182745941, 7.62752279e-08, 1, 6.01336438e-08, -0.0182745941, -5.87297002e-08, 0.999833047)
-        end  
-	})
-
-mTab:AddButton({
-	Name = "auto win",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(237.877243, 98.9412842, -586.641235, -1, 0, -0, 0, 0, -1, 0, -1, -0)
-  	end  
-	})
-
-local Section = mTab:AddSection({
-	Name = "ESP"
-})
-
-mTab:AddButton({
-	Name = "esp item",
-	Callback = function()
-local modelName = "Key1"
-local model = workspace:FindFirstChild(modelName)
-
-if model then
-    print(modelName .. " exists in the Workspace.")
-
-    -- ตรวจสอบว่ามี Highlights เดิมอยู่หรือไม่ ถ้ามีก็ลบทิ้ง
-    local oldHighlight = model:FindFirstChildOfClass("Highlight")
-    if oldHighlight then
-        oldHighlight:Destroy()
-    end
-
-    -- สร้าง Highlights ใหม่
-    local highlight = Instance.new("Highlight")
-    highlight.Name = "Key1Highlight"  -- ตั้งชื่อ Highlights
-    highlight.Parent = model           -- กำหนด parent เป็น Model ที่ชื่อ Key1
-    highlight.FillTransparency = 0.8   -- ความโปร่งใสของพื้นที่ข้างใน
-    highlight.FillColor = Color3.new(0, 1, 0)  -- สีพื้นที่ข้างใน (สีเขียว)
-    highlight.OutlineColor = Color3.new(0, 1, 0) -- สีของเส้นขอบ (สีเขียว)
-    highlight.OutlineTransparency = 0 -- ความโปร่งใสของเส้นขอบ
-
-    -- ตรวจสอบว่ามี ESP Text (BillboardGui) เดิมอยู่หรือไม่ ถ้ามีก็ลบทิ้ง
-    local oldESP = model:FindFirstChild("ESPText")
-    if oldESP then
-        oldESP:Destroy()
-    end
-
-    -- สร้าง BillboardGui ใหม่สำหรับ ESP Text
-    local billboardGui = Instance.new("BillboardGui")
-    billboardGui.Name = "ESPText" -- ตั้งชื่อ BillboardGui
-    billboardGui.Parent = model -- กำหนด parent เป็น Model ที่ชื่อ Key1
-    billboardGui.AlwaysOnTop = true -- ให้แสดงผลตลอดเวลา
-    billboardGui.Size = UDim2.new(0, 25, 0, 25) -- ขนาดของ GUI
-    billboardGui.StudsOffset = Vector3.new(0, 3, 0) -- ย้ายตำแหน่ง GUI เหนือ Model
-
-    -- สร้าง TextLabel สำหรับแสดงชื่อ Model
-    local textLabel = Instance.new("TextLabel")
-    textLabel.Parent = billboardGui -- กำหนด parent เป็น BillboardGui
-    textLabel.Size = UDim2.new(1, 0, 1, 0) -- ขนาดของ TextLabel
-    textLabel.BackgroundTransparency = 1 -- พื้นหลังโปร่งใส
-    textLabel.Text = "Key" -- แสดงคำว่า "Key"
-    textLabel.TextColor3 = Color3.new(0, 1, 0) -- สีของข้อความเป็นสีเขียว
-    textLabel.TextScaled = true -- ปรับขนาดตัวอักษรให้พอดีกับ TextLabel
-
-else
-    print(modelName .. " does not exist in the Workspace.")
-end
-
-local function addESPToButterflies()
-    local workspace = game:GetService("Workspace") -- เข้าถึง Workspace
-    local butterflies = {} -- สร้างตารางเก็บโมเดล Butterfly
-
-    -- ค้นหาโมเดลชื่อ "Butterfly" ทั้งหมดใน Workspace
-    for _, model in ipairs(workspace:GetChildren()) do
-        if model:IsA("Model") and model.Name == "Butterfly" then
-            table.insert(butterflies, model) -- เพิ่มโมเดลลงในตาราง
-        end
-    end
-
-    -- สำหรับแต่ละโมเดลที่เจอ
-    for _, butterfly in ipairs(butterflies) do
-        -- ถ้ามี ESP Text อันเดิมอยู่ให้ลบทิ้ง
-        local existingESP = butterfly:FindFirstChild("ESPText")
-        if existingESP then
-            existingESP:Destroy()
-        end
-
-        -- สร้าง ESP Text ใหม่
-        local espText = Instance.new("BillboardGui")
-        espText.Name = "ESPText"
-        espText.Adornee = butterfly.PrimaryPart -- ทำให้ ESP ชี้ไปที่ส่วนหลักของโมเดล
-        espText.Size = UDim2.new(0, 25, 0, 25) -- ขนาดของ ESP
-        espText.AlwaysOnTop = true -- ให้ ESP อยู่ข้างบนตลอดเวลา
-
-        local textLabel = Instance.new("TextLabel")
-        textLabel.Size = UDim2.new(1, 0, 1, 0)
-        textLabel.BackgroundTransparency = 1 -- ปรับความโปร่งใสของพื้นหลัง
-        textLabel.TextColor3 = Color3.fromRGB(0, 255, 0) -- สีเขียว
-        textLabel.TextScaled = true -- ปรับขนาดข้อความอัตโนมัติ
-        
-        -- แสดงชื่อเป็น "Butterfly" สำหรับทุกโมเดล
-        textLabel.Text = "Butterfly"
-        
-        -- เพิ่ม TextLabel ลงใน BillboardGui
-        textLabel.Parent = espText
-        espText.Parent = butterfly -- เพิ่ม BillboardGui ลงในโมเดล
-    end
-
-    if #butterflies > 0 then
-        print("ได้เพิ่ม ESP Text ให้กับโมเดล 'Butterfly'")
-    else
-        print("ไม่มีโมเดลชื่อ 'Butterfly' ใน Workspace")
-    end
-end
-
--- เรียกใช้งานฟังก์ชัน
-addESPToButterflies()
-        end  
-	})
-
-mTab:AddButton({
-	Name = "esp Monster",
-	Callback = function()
--- ตรวจสอบว่า GameAI โฟลเดอร์อยู่ใน Workspace หรือไม่
-local gameAIFolder = workspace:FindFirstChild("GameAI2")
-
-if gameAIFolder then
-    -- วนลูปเพื่อแสดงรายการสิ่งที่อยู่ในโฟลเดอร์ GameAI
-    for _, item in pairs(gameAIFolder:GetChildren()) do
-        if item:IsA("Model") then  -- ตรวจสอบว่าเป็นโมเดลหรือไม่
-            -- ลบ Highlight เดิมถ้ามี
-            local existingHighlight = item:FindFirstChildOfClass("Highlight")
-            if existingHighlight then
-                existingHighlight:Destroy()
+                     local TextLabel = Instance.new("TextLabel")
+                     TextLabel.Parent = BillboardGui
+                     TextLabel.BackgroundTransparency = 1
+                     TextLabel.Size = UDim2.new(1, 0, 1, 0)
+                     TextLabel.Font = Enum.Font.FredokaOne
+                     TextLabel.Text = v.Name
+                     TextLabel.TextColor3 = Color3.fromRGB(81, 255, 0)
+                     TextLabel.TextSize = 20
+                     TextLabel.TextStrokeTransparency = 0
+                 end
+             end
+         end
+      else
+         local keyModel = workspace:FindFirstChild("Key1")
+         if keyModel then
+            for i, v in pairs(keyModel:GetDescendants()) do
+                if v:IsA("BillboardGui") and v.Name == "Fack HUB" then
+                    v:Destroy()
+                end
             end
-            
-            -- สร้าง Highlight ใหม่
-            local highlight = Instance.new("Highlight")
-            highlight.Name = "Highlight"
-            highlight.Parent = item
-            highlight.FillColor = Color3.new(1, 0, 0)  -- สีแดง
-            highlight.FillTransparency = 0.5  -- โปร่งใส 50%
-            highlight.OutlineColor = Color3.new(1, 0, 0)  -- สีแดง
-            highlight.OutlineTransparency = 0  -- ไม่มีความโปร่งใสของขอบ
-        end
-    end
-else
-    print("ไม่พบโฟลเดอร์ GameAI ใน Workspace")
-end
+         end
 
--- ตรวจสอบว่า GameAI โฟลเดอร์อยู่ใน Workspace หรือไม่
-local gameAIFolder = workspace:FindFirstChild("GameAI")
-
-if gameAIFolder then
-    -- วนลูปเพื่อแสดงรายการสิ่งที่อยู่ในโฟลเดอร์ GameAI
-    for _, item in pairs(gameAIFolder:GetChildren()) do
-        if item:IsA("Model") then  -- ตรวจสอบว่าเป็นโมเดลหรือไม่
-            -- ลบ Highlight เดิมถ้ามี
-            local existingHighlight = item:FindFirstChildOfClass("Highlight")
-            if existingHighlight then
-                existingHighlight:Destroy()
+         local butterflyModel = workspace:FindFirstChild("Butterfly")
+         if butterflyModel then
+            for i, v in pairs(butterflyModel:GetDescendants()) do
+                if v:IsA("BillboardGui") and v.Name == "Fack HUB" then
+                    v:Destroy()
+                end
             end
-            
-            -- สร้าง Highlight ใหม่
-            local highlight = Instance.new("Highlight")
-            highlight.Name = "Highlight"
-            highlight.Parent = item
-            highlight.FillColor = Color3.new(1, 0, 0)  -- สีแดง
-            highlight.FillTransparency = 0.5  -- โปร่งใส 50%
-            highlight.OutlineColor = Color3.new(1, 0, 0)  -- สีแดง
-            highlight.OutlineTransparency = 0  -- ไม่มีความโปร่งใสของขอบ
-        end
-    end
-else
-    print("ไม่พบโฟลเดอร์ GameAI ใน Workspace")
-end
-        end  
-	})
+         end
+      end
+   end,
+})
+
+local Toggle = bTab:CreateToggle({
+   Name = "ESP Monster",
+   CurrentValue = false,
+   Flag = "Toggle1", 
+   Callback = function(Value)
+      if Value then
+         for k, v in pairs(workspace.GameAI:GetChildren()) do
+            if v:IsA("Model") and not v:FindFirstChild("Fack HUB") then
+               local highlight = Instance.new("Highlight")
+               highlight.Parent = v
+               highlight.Name = "Fack HUB"
+               highlight.FillColor = Color3.fromRGB(255, 0, 0) 
+               highlight.OutlineColor = Color3.fromRGB(255, 0, 0)
+               highlight.FillTransparency = 0.5
+               highlight.OutlineTransparency = 0
+               highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+            end
+         end
+		for k, v in pairs(workspace.GameAI2:GetChildren()) do
+            if v:IsA("Model") and not v:FindFirstChild("Fack HUB") then
+               local highlight = Instance.new("Highlight")
+               highlight.Parent = v
+               highlight.Name = "Fack HUB"
+               highlight.FillColor = Color3.fromRGB(255, 0, 0) 
+               highlight.OutlineColor = Color3.fromRGB(255, 0, 0)
+               highlight.FillTransparency = 0.5
+               highlight.OutlineTransparency = 0
+               highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+            end
+         end
+      else
+         for k, v in pairs(workspace.GameAI:GetDescendants()) do
+            if v:IsA("Highlight") and v.Name == "Fack HUB" then
+               v:Destroy()
+            end
+         end
+	  	for k, v in pairs(workspace.GameAI2:GetDescendants()) do
+            if v:IsA("Highlight") and v.Name == "Fack HUB" then
+               v:Destroy()
+            	end
+        	end
+		end
+   end,
+})
 end
 
 local allowedPlaceIds = {6425178683}
 
 if table.find(allowedPlaceIds, game.PlaceId) then
-local Section = mTab:AddSection({
-	Name = "kintoru"
+
+local Section = bTab:CreateSection("Auto Win")
+
+local Button = bTab:CreateButton({
+   Name = "Auto Win",
+   Callback = function()
+      game.Players.LocalPlayer.character.HumanoidRootPart.CFrame = CFrame.new(863.558289, 79.4404068, -353.719604, -1.1920929e-07, 0, 1.00000012, 0, 1, 0, -1.00000012, 0, -1.1920929e-07)
+   end,
 })
 
-mTab:AddButton({
-	Name = "tp to butterfly",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(674.111023, 78.9342194, -114.806335, -0.997326136, 0.0730108991, -0.0032732673, 0.0730842426, 0.9963274, -0.0446137637, 3.95544339e-06, -0.0447336808, -0.998999357)
-        end  
-	})
+local Section = bTab:CreateSection("ESP")
 
-mTab:AddButton({
-	Name = "tp to exit",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(824.872437, 75.3413315, -353.075073, -0.0617853552, 2.76040946e-09, -0.998089492, 9.99040992e-08, 1, -3.41873219e-09, 0.998089492, -9.99244563e-08, -0.0617853552)
-        end  
-	})
+local Toggle = bTab:CreateToggle({
+   Name = "ESP item",
+   CurrentValue = false,
+   Flag = "Toggle1",
+   Callback = function(Value)
+      if Value then
+         for i, v in pairs(workspace:GetChildren()) do
+             if v:IsA("Model") and v.Name == "Key1" and not v:FindFirstChild("Fack HUB") then
+                 local handle = v:FindFirstChild("Handle")
+                 if handle then
+                     local BillboardGui = Instance.new("BillboardGui")
+                     BillboardGui.Parent = handle
+                     BillboardGui.Name = "Fack HUB"
+                     BillboardGui.AlwaysOnTop = true
+                     BillboardGui.LightInfluence = 0
+                     BillboardGui.Size = UDim2.new(0, 100, 0, 50)
+                     BillboardGui.StudsOffset = Vector3.new(0, 2, 0)
 
-mTab:AddButton({
-	Name = "auto win",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(863.558289, 79.4404068, -353.719604, 0, 0, 1, 0, 1, -0, -1, 0, 0)
-  	end  
-	})
+                     local TextLabel = Instance.new("TextLabel")
+                     TextLabel.Parent = BillboardGui
+                     TextLabel.BackgroundTransparency = 1
+                     TextLabel.Size = UDim2.new(1, 0, 1, 0)
+                     TextLabel.Font = Enum.Font.FredokaOne
+                     TextLabel.Text = v.Name
+                     TextLabel.TextColor3 = Color3.fromRGB(81, 255, 0)
+                     TextLabel.TextSize = 20
+                     TextLabel.TextStrokeTransparency = 0
+                 end
+             end
+         end
 
-local Section = mTab:AddSection({
-	Name = "ESP"
-})
+         for i, v in pairs(workspace:GetChildren()) do
+             if v:IsA("Model") and v.Name == "Butterfly" and not v:FindFirstChild("Fack HUB") then
+                 local part = v.PrimaryPart or v:FindFirstChildWhichIsA("BasePart")
+                 if part then
+                     local BillboardGui = Instance.new("BillboardGui")
+                     BillboardGui.Parent = part
+                     BillboardGui.Name = "Fack HUB"
+                     BillboardGui.AlwaysOnTop = true
+                     BillboardGui.LightInfluence = 0
+                     BillboardGui.Size = UDim2.new(0, 100, 0, 50)
+                     BillboardGui.StudsOffset = Vector3.new(0, 2, 0)
 
-mTab:AddButton({
-	Name = "esp item",
-	Callback = function()
-local function addESPToButterflies()
-    local workspace = game:GetService("Workspace") -- เข้าถึง Workspace
-    local butterflies = {} -- สร้างตารางเก็บโมเดล Butterfly
-
-    -- ค้นหาโมเดลชื่อ "Butterfly" ทั้งหมดใน Workspace
-    for _, model in ipairs(workspace:GetChildren()) do
-        if model:IsA("Model") and model.Name == "Butterfly" then
-            table.insert(butterflies, model) -- เพิ่มโมเดลลงในตาราง
-        end
-    end
-
-    -- สำหรับแต่ละโมเดลที่เจอ
-    for _, butterfly in ipairs(butterflies) do
-        -- ถ้ามี ESP Text อันเดิมอยู่ให้ลบทิ้ง
-        local existingESP = butterfly:FindFirstChild("ESPText")
-        if existingESP then
-            existingESP:Destroy()
-        end
-
-        -- สร้าง ESP Text ใหม่
-        local espText = Instance.new("BillboardGui")
-        espText.Name = "ESPText"
-        espText.Adornee = butterfly.PrimaryPart -- ทำให้ ESP ชี้ไปที่ส่วนหลักของโมเดล
-        espText.Size = UDim2.new(0, 25, 0, 25) -- ขนาดของ ESP
-        espText.AlwaysOnTop = true -- ให้ ESP อยู่ข้างบนตลอดเวลา
-
-        local textLabel = Instance.new("TextLabel")
-        textLabel.Size = UDim2.new(1, 0, 1, 0)
-        textLabel.BackgroundTransparency = 1 -- ปรับความโปร่งใสของพื้นหลัง
-        textLabel.TextColor3 = Color3.fromRGB(0, 255, 0) -- สีเขียว
-        textLabel.TextScaled = true -- ปรับขนาดข้อความอัตโนมัติ
-        
-        -- แสดงชื่อเป็น "Butterfly" สำหรับทุกโมเดล
-        textLabel.Text = "Butterfly"
-        
-        -- เพิ่ม TextLabel ลงใน BillboardGui
-        textLabel.Parent = espText
-        espText.Parent = butterfly -- เพิ่ม BillboardGui ลงในโมเดล
-    end
-
-    if #butterflies > 0 then
-        print("ได้เพิ่ม ESP Text ให้กับโมเดล 'Butterfly'")
-    else
-        print("ไม่มีโมเดลชื่อ 'Butterfly' ใน Workspace")
-    end
-end
-
--- เรียกใช้งานฟังก์ชัน
-addESPToButterflies()
-        end  
-	})
-
-mTab:AddButton({
-	Name = "esp Monster",
-	Callback = function()
--- ตรวจสอบว่า GameAI โฟลเดอร์อยู่ใน Workspace หรือไม่
-local gameAIFolder = workspace:FindFirstChild("GameAI")
-
-if gameAIFolder then
-    -- วนลูปเพื่อแสดงรายการสิ่งที่อยู่ในโฟลเดอร์ GameAI
-    for _, item in pairs(gameAIFolder:GetChildren()) do
-        if item:IsA("Model") then  -- ตรวจสอบว่าเป็นโมเดลหรือไม่
-            -- ลบ Highlight เดิมถ้ามี
-            local existingHighlight = item:FindFirstChildOfClass("Highlight")
-            if existingHighlight then
-                existingHighlight:Destroy()
+                     local TextLabel = Instance.new("TextLabel")
+                     TextLabel.Parent = BillboardGui
+                     TextLabel.BackgroundTransparency = 1
+                     TextLabel.Size = UDim2.new(1, 0, 1, 0)
+                     TextLabel.Font = Enum.Font.FredokaOne
+                     TextLabel.Text = v.Name
+                     TextLabel.TextColor3 = Color3.fromRGB(81, 255, 0)
+                     TextLabel.TextSize = 20
+                     TextLabel.TextStrokeTransparency = 0
+                 end
+             end
+         end
+      else
+         local keyModel = workspace:FindFirstChild("Key1")
+         if keyModel then
+            for i, v in pairs(keyModel:GetDescendants()) do
+                if v:IsA("BillboardGui") and v.Name == "Fack HUB" then
+                    v:Destroy()
+                end
             end
-            
-            -- สร้าง Highlight ใหม่
-            local highlight = Instance.new("Highlight")
-            highlight.Name = "Highlight"
-            highlight.Parent = item
-            highlight.FillColor = Color3.new(1, 0, 0)  -- สีแดง
-            highlight.FillTransparency = 0.5  -- โปร่งใส 50%
-            highlight.OutlineColor = Color3.new(1, 0, 0)  -- สีแดง
-            highlight.OutlineTransparency = 0  -- ไม่มีความโปร่งใสของขอบ
-        end
-    end
-else
-    print("ไม่พบโฟลเดอร์ GameAI ใน Workspace")
-end
-        end  
-	})
+         end
+
+         local butterflyModel = workspace:FindFirstChild("Butterfly")
+         if butterflyModel then
+            for i, v in pairs(butterflyModel:GetDescendants()) do
+                if v:IsA("BillboardGui") and v.Name == "Fack HUB" then
+                    v:Destroy()
+                end
+            end
+         end
+      end
+   end,
+})
+
+local Toggle = bTab:CreateToggle({
+   Name = "ESP Monster",
+   CurrentValue = false,
+   Flag = "Toggle1", 
+   Callback = function(Value)
+      if Value then
+         for k, v in pairs(workspace.GameAI:GetChildren()) do
+            if v:IsA("Model") and not v:FindFirstChild("Fack HUB") then
+               local highlight = Instance.new("Highlight")
+               highlight.Parent = v
+               highlight.Name = "Fack HUB"
+               highlight.FillColor = Color3.fromRGB(255, 0, 0) 
+               highlight.OutlineColor = Color3.fromRGB(255, 0, 0)
+               highlight.FillTransparency = 0.5
+               highlight.OutlineTransparency = 0
+               highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+            end
+         end
+      else
+         for k, v in pairs(workspace.GameAI:GetDescendants()) do
+            if v:IsA("Highlight") and v.Name == "Fack HUB" then
+               v:Destroy()
+            end
+         end
+      end
+   end,
+})
 end
 
-local bTab = Window:MakeTab({
-	Name = "book1 chapter3",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-	})
+local cTab = Window:CreateTab("b1c3", "rewind")
 
-local allowedPlaceIds = {6243699076, 6296321810, 6301638949, 6373539583, 6406571212, 6425178683, 6472459099}
+local allowedPlaceIds = {6472459099}
 
 if table.find(allowedPlaceIds, game.PlaceId) then
-local Section = bTab:AddSection({
-	Name = "Kaito"
+
+local Section = cTab:CreateSection("Auto Win")
+
+local Button = cTab:CreateButton({
+   Name = "Auto Win",
+   Callback = function()
+      game.Players.LocalPlayer.character.HumanoidRootPart.CFrame = CFrame.new(2411.87427, -15.7511759, 2285.42798, 0, 0, 1, 1, 0, 0, 0, 1, 0)
+   end,
 })
 
-bTab:AddButton({
-	Name = "auto win",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1533.97632, 97.5409698, -366.758148, 0, 0, 1, 0, 1, -0, -1, 0, 0)
-  	end  
-	})
+local Section = cTab:CreateSection("ESP")
 
-local Section = bTab:AddSection({
-	Name = "Kaito1"
-})
+local Toggle = cTab:CreateToggle({
+    Name = "ESP item",
+    CurrentValue = false,
+    Flag = "Toggle1",
+    Callback = function(Value)
+        if Value then
+            for i, v in pairs(workspace:GetChildren()) do
+                if v.Name == "Crowbar" and not v:FindFirstChild("Fack HUB") then
+                    local handle = v:FindFirstChild("Handle")
+                    if handle then
+                        local BillboardGui = Instance.new("BillboardGui")
+                        BillboardGui.Parent = handle
+                        BillboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+                        BillboardGui.Active = true
+                        BillboardGui.Name = "Fack HUB"
+                        BillboardGui.AlwaysOnTop = true
+                        BillboardGui.LightInfluence = 1.000
+                        BillboardGui.Size = UDim2.new(0, 200, 0, 200)
 
-bTab:AddButton({
-	Name = "tp to code",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2210.33887, 1.49474907, 376.277832, -0.997896731, -4.00356051e-08, -0.064824082, -4.4106411e-08, 1, 6.13666558e-08, 0.064824082, 6.40967386e-08, -0.997896731)
-        end  
-	})
-
-bTab:AddButton({
-	Name = "tp to door",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2235.52637, 1.5445962, 456.490479, -0.997967482, -1.14147049e-07, 0.0637248531, -1.09097513e-07, 1, 8.27192395e-08, -0.0637248531, 7.55988978e-08, -0.997967482)
-        end  
-	})
-
-bTab:AddButton({
-	Name = "tp to exit",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2258.20361, 1.54459643, 401.623047, 0.122757159, 5.69700802e-08, 0.992436767, -8.53194777e-08, 1, -4.68508468e-08, -0.992436767, -7.89229162e-08, 0.122757159)
-        end  
-	})
-
-local Section = bTab:AddSection({
-	Name = "Kaito2"
-})
-
-bTab:AddButton({
-	Name = "tp to code",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2139.26318, -0.742618501, 406.472534, 0.999359071, -1.94336458e-09, -0.035797935, 2.88113244e-09, 1, 2.61445603e-08, 0.035797935, -2.6230941e-08, 0.999359071)
-        end  
-	})
-
-bTab:AddButton({
-	Name = "tp to door",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2076.84131, -0.742618442, 409.959595, -0.0357177109, -7.31511918e-08, 0.999361932, -3.85847159e-08, 1, 7.18188602e-08, -0.999361932, -3.59948906e-08, -0.0357177109)
-        end  
-	})
-
-bTab:AddButton({
-	Name = "tp to sword",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1701.21802, 1.23458958, 767.532593, -0.994518876, 4.26414744e-08, 0.104557633, 4.22093471e-08, 1, -6.34562181e-09, -0.104557633, -1.89753147e-09, -0.994518876)
-        end  
-	})
-
-bTab:AddButton({
-	Name = "tp to Sword stand",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2000.37317, 1.09172821, 1071.27783, -0.999865651, -9.44207112e-09, 0.0163910892, -9.73050174e-09, 1, -1.75170296e-08, -0.0163910892, -1.76741697e-08, -0.999865651)
-        end  
-	})
-
-bTab:AddButton({
-	Name = "tp to exit",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2328.59961, -4.04398394, 820.075623, 0, 0, 1, 0, 1, -0, -1, 0, 0)
-  	end  
-	})
-
-bTab:AddButton({
-	Name = "auto win",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2328.59961, -4.04398394, 820.075623, 0, 0, 1, 0, 1, -0, -1, 0, 0)
-  	end  
-	})
-
-local Section = bTab:AddSection({
-	Name = "Kaito3"
-})
-
-bTab:AddButton({
-	Name = "tp to butterfly",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2465.76929, 29.0920906, 1938.5603, -0.468699157, -7.66659269e-08, 0.883357823, 1.73660304e-08, 1, 9.60034185e-08, -0.883357823, 6.03371433e-08, -0.468699157)
-        end  
-	})
-
-bTab:AddButton({
-	Name = "tp to Butterfly stand",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2413.59937, -21.5496769, 1925.75586, -0.997784019, -7.23919724e-09, 0.0665356293, -1.3802218e-08, 1, -9.81795125e-08, -0.0665356293, -9.88802853e-08, -0.997784019)
-        end  
-	})
-
-bTab:AddButton({
-	Name = "tp to exit",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2411.71362, -23.0311146, 2019.91846, -0.998449802, 1.23823236e-08, 0.0556594022, 1.28944428e-08, 1, 8.84181972e-09, -0.0556594022, 9.54581036e-09, -0.998449802)
-        end  
-	})
-
-bTab:AddButton({
-	Name = "auto win",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2411.87427, -15.7511759, 2285.42798, 0, 0, 1, 1, 0, 0, 0, 1, 0)
-  	end  
-	})
-
-local Section = bTab:AddSection({
-	Name = "ESP"
-})
-
-bTab:AddButton({
-	Name = "esp Monster",
-	Callback = function()
--- ตรวจสอบว่า GameAI โฟลเดอร์อยู่ใน Workspace หรือไม่
-local gameAIFolder = workspace:FindFirstChild("GameAI")
-
-if gameAIFolder then
-    -- วนลูปเพื่อแสดงรายการสิ่งที่อยู่ในโฟลเดอร์ GameAI
-    for _, item in pairs(gameAIFolder:GetChildren()) do
-        if item:IsA("Model") then  -- ตรวจสอบว่าเป็นโมเดลหรือไม่
-            -- ลบ Highlight เดิมถ้ามี
-            local existingHighlight = item:FindFirstChildOfClass("Highlight")
-            if existingHighlight then
-                existingHighlight:Destroy()
+                        local TextLabel = Instance.new("TextLabel")
+                        TextLabel.Parent = BillboardGui
+                        TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        TextLabel.BackgroundTransparency = 1.000
+                        TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+                        TextLabel.BorderSizePixel = 0
+                        TextLabel.Position = UDim2.new(0, 0, 0.2, 0)
+                        TextLabel.Size = UDim2.new(0, 200, 0, 50)
+                        TextLabel.Font = Enum.Font.FredokaOne
+                        TextLabel.Text = v.Name
+                        TextLabel.TextColor3 = Color3.fromRGB(81, 255, 0)
+                        TextLabel.TextSize = 25
+                        TextLabel.TextStrokeTransparency = 0
+                        TextLabel.TextWrapped = true
+                    end
+                end
             end
-            
-            -- สร้าง Highlight ใหม่
-            local highlight = Instance.new("Highlight")
-            highlight.Name = "Highlight"
-            highlight.Parent = item
-            highlight.FillColor = Color3.new(1, 0, 0)  -- สีแดง
-            highlight.FillTransparency = 0.5  -- โปร่งใส 50%
-            highlight.OutlineColor = Color3.new(1, 0, 0)  -- สีแดง
-            highlight.OutlineTransparency = 0  -- ไม่มีความโปร่งใสของขอบ
+			for i, v in pairs(workspace:GetChildren()) do
+                if v.Name == "Blade" and not v:FindFirstChild("Fack HUB") then
+                    local handle = v:FindFirstChild("Handle")
+                    if handle then
+                        local BillboardGui = Instance.new("BillboardGui")
+                        BillboardGui.Parent = handle
+                        BillboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+                        BillboardGui.Active = true
+                        BillboardGui.Name = "Fack HUB"
+                        BillboardGui.AlwaysOnTop = true
+                        BillboardGui.LightInfluence = 1.000
+                        BillboardGui.Size = UDim2.new(0, 200, 0, 200)
+
+                        local TextLabel = Instance.new("TextLabel")
+                        TextLabel.Parent = BillboardGui
+                        TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        TextLabel.BackgroundTransparency = 1.000
+                        TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+                        TextLabel.BorderSizePixel = 0
+                        TextLabel.Position = UDim2.new(0, 0, 0.2, 0)
+                        TextLabel.Size = UDim2.new(0, 200, 0, 50)
+                        TextLabel.Font = Enum.Font.FredokaOne
+                        TextLabel.Text = v.Name
+                        TextLabel.TextColor3 = Color3.fromRGB(81, 255, 0)
+                        TextLabel.TextSize = 25
+                        TextLabel.TextStrokeTransparency = 0
+                        TextLabel.TextWrapped = true
+                    end
+                end
+            end
+			for i, v in pairs(workspace:GetChildren()) do
+                if v:IsA("Model") and v.Name == "Butterfly" and not v:FindFirstChild("Fack HUB") then
+                        local BillboardGui = Instance.new("BillboardGui")
+                        BillboardGui.Parent = v
+                        BillboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+                        BillboardGui.Active = true
+                        BillboardGui.Name = "Fack HUB"
+                        BillboardGui.AlwaysOnTop = true
+                        BillboardGui.LightInfluence = 1.000
+                        BillboardGui.Size = UDim2.new(0, 200, 0, 200)
+
+                        local TextLabel = Instance.new("TextLabel")
+                        TextLabel.Parent = BillboardGui
+                        TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        TextLabel.BackgroundTransparency = 1.000
+                        TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+                        TextLabel.BorderSizePixel = 0
+                        TextLabel.Position = UDim2.new(0, 0, 0.2, 0)
+                        TextLabel.Size = UDim2.new(0, 200, 0, 50)
+                        TextLabel.Font = Enum.Font.FredokaOne
+                        TextLabel.Text = v.Name
+                        TextLabel.TextColor3 = Color3.fromRGB(81, 255, 0)
+                        TextLabel.TextSize = 25
+                        TextLabel.TextStrokeTransparency = 0
+                        TextLabel.TextWrapped = true
+                    end
+                end
+        else
+            -- ทำลาย BillboardGui ทุกตัวที่ชื่อ "Fack HUB" ใน Crowbar ทุกตัว
+            for i, v in pairs(workspace:GetChildren()) do
+                if v.Name == "Crowbar" then
+                    for i, v in pairs(v:GetDescendants()) do
+                        if v:IsA("BillboardGui") and v.Name == "Fack HUB" then
+                            v:Destroy()
+                        end
+                    end
+                end
+            end
+		for i, v in pairs(workspace:GetChildren()) do
+                if v.Name == "Blade" then
+                    for i, v in pairs(v:GetDescendants()) do
+                        if v:IsA("BillboardGui") and v.Name == "Fack HUB" then
+                            v:Destroy()
+                        end
+                    end
+                end
+            end
+			for i, v in pairs(workspace:GetChildren()) do
+                if v.Name == "Butterfly" then
+                    for i, v in pairs(v:GetDescendants()) do
+                        if v:IsA("BillboardGui") and v.Name == "Fack HUB" then
+                            v:Destroy()
+                        end
+                    end
+                end
+            end
         end
-    end
-else
-    print("ไม่พบโฟลเดอร์ GameAI ใน Workspace")
-end
-        end  
-	})
+    end,
+})
+
+local Toggle = cTab:CreateToggle({
+   Name = "ESP Monster",
+   CurrentValue = false,
+   Flag = "Toggle1", 
+   Callback = function(Value)
+      if Value then
+         for k, v in pairs(workspace.GameAI:GetChildren()) do
+            if v:IsA("Model") and not v:FindFirstChild("Fack HUB") then
+               local highlight = Instance.new("Highlight")
+               highlight.Parent = v
+               highlight.Name = "Fack HUB"
+               highlight.FillColor = Color3.fromRGB(255, 0, 0) 
+               highlight.OutlineColor = Color3.fromRGB(255, 0, 0)
+               highlight.FillTransparency = 0.5
+               highlight.OutlineTransparency = 0
+               highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+            end
+         end
+      else
+         for k, v in pairs(workspace.GameAI:GetDescendants()) do
+            if v:IsA("Highlight") and v.Name == "Fack HUB" then
+               v:Destroy()
+            end
+         end
+      end
+   end,
+})
 end
 
 local allowedPlaceIds = {6682163754}
 
 if table.find(allowedPlaceIds, game.PlaceId) then
-local Section = bTab:AddSection({
-	Name = "Mihari"
+
+local Section = cTab:CreateSection("Auto Win")
+
+local Button = cTab:CreateButton({
+   Name = "Auto Win",
+   Callback = function()
+      game.Players.LocalPlayer.character.HumanoidRootPart.CFrame = CFrame.new(242.771713, 34.3152275, 449.323639, 0, 0, 1, 1, 0, 0, 0, 1, 0)
+   end,
 })
 
-bTab:AddButton({
-	Name = "tp to key",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(17.420805, 36.3822899, 93.5418167, 0.156089664, 2.63637894e-08, 0.987742901, 7.19953945e-08, 1, -3.806813e-08, -0.987742901, 7.70549775e-08, 0.156089664)
-        end  
-	})
+local Section = cTab:CreateSection("ESP")
 
-bTab:AddButton({
-	Name = "tp to door",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(62.742836, 36.3822899, 74.2366714, -0.0745322406, -3.80412618e-10, -0.997218609, -9.07953002e-09, 1, 2.97131569e-10, 0.997218609, 9.07642228e-09, -0.0745322406)
-        end  
-	})
-
-bTab:AddButton({
-	Name = "tp to exit",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(180.159744, 33.9944229, 185.300354, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-        end  
-	})
-
-bTab:AddButton({
-	Name = "auto win",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(180.159744, 33.9944229, 185.300354, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-        end  
-	})
-
-local Section = bTab:AddSection({
-	Name = "Mihari1"
-})
-
-bTab:AddButton({
-	Name = "auto win",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(242.771713, 34.3152275, 449.323639, 0, 0, 1, 1, 0, 0, 0, 1, 0)
-  	end  
-	})
-
-local Section = bTab:AddSection({
-	Name = "ESP"
-})
-
-bTab:AddButton({
-	Name = "esp item",
-	Callback = function()
-local function createHighlight(handle)
-    local highlight = Instance.new("Highlight")
-    highlight.Name = "Highlight"
-    highlight.Parent = handle
-    highlight.FillColor = Color3.new(0, 1, 0) -- สีเขียว
-    highlight.FillTransparency = 0.5 -- ความโปร่งใส
-    highlight.OutlineColor = Color3.new(0, 1, 0) -- สีเขียวสำหรับเส้นขอบ
-    highlight.OutlineTransparency = 0 -- ความโปร่งใสของเส้นขอบ
-end
-
-local function createESP(giver, handle, height)
-    local espText = Instance.new("BillboardGui")
-    espText.Name = "ESP"
-    espText.Size = UDim2.new(1, 0, 1, 0)
-    espText.Adornee = handle
-    espText.AlwaysOnTop = true
-
-    -- ปรับตำแหน่ง ESP ให้สูงขึ้น
-    espText.StudsOffset = Vector3.new(0, height, 0) -- กำหนดความสูงที่ต้องการ
-
-    local textLabel = Instance.new("TextLabel")
-    textLabel.Size = UDim2.new(0, 25, 0, 25)
-    textLabel.BackgroundTransparency = 1
-    textLabel.Text = giver.Name
-    textLabel.TextColor3 = Color3.new(0, 1, 0) -- สีเขียว
-    textLabel.TextScaled = true
-    textLabel.Parent = espText
-
-    espText.Parent = handle
-end
-
-local giversFolder = game.Workspace:FindFirstChild("Givers")
-
-if giversFolder then
-    local espHeight = 2 -- ตั้งค่าความสูงของ ESP ที่นี่
-
-    for _, giver in pairs(giversFolder:GetChildren()) do
-        local handle = giver:FindFirstChild("Handle")
-
-        if handle then
-            -- ลบ Highlight ที่มีอยู่แล้ว
-            local existingHighlight = handle:FindFirstChildOfClass("Highlight")
-            if existingHighlight then existingHighlight:Destroy() end
-            
-            createHighlight(handle)
-
-            -- ลบ ESP ที่มีอยู่แล้ว
-            local existingESP = handle:FindFirstChild("ESP")
-            if existingESP then existingESP:Destroy() end
-
-            createESP(giver, handle, espHeight) -- ส่งค่าความสูงไปยังฟังก์ชัน createESP
-
-            print(giver.Name .. " ได้เพิ่ม Highlight และ ESP ใหม่ให้กับ Handle")
-        else
-            print(giver.Name .. " ไม่มี Handle")
-        end
-    end
-else
-    print("ไม่มีโฟลเดอร์ Givers ใน Workspace")
-end
-
-local part = workspace:FindFirstChild("Rose") -- ค้นหา Part ที่ชื่อ Rose ใน Workspace
-
-if part then
-    local handle = part:FindFirstChild("Handle") -- ค้นหา Object ที่ชื่อ Handle ภายใน Rose
-    if handle then
-        print("Found Handle inside Rose")
-        
-        -- ลบ Highlight และ BillboardGui ที่มีอยู่เดิม ถ้ามี
-        local oldHighlight = handle:FindFirstChild("Highlight")
-        if oldHighlight then
-            oldHighlight:Destroy()
-        end
-        
-        local oldBillboardGui = handle:FindFirstChild("BillboardGui")
-        if oldBillboardGui then
-            oldBillboardGui:Destroy()
-        end
-
-        -- เพิ่ม Highlight ใหม่
-        local highlight = Instance.new("Highlight")
-        highlight.Adornee = handle
-        highlight.Parent = handle
-        highlight.FillTransparency = 1 -- ทำให้โปร่งใสข้างใน
-        highlight.OutlineColor = Color3.fromRGB(0, 255, 0) -- สีเขียว
-        highlight.OutlineTransparency = 0 -- เส้นขอบไม่โปร่งใส
-
-        -- เพิ่ม ESP Text (BillboardGui) ใหม่
-        local billboardGui = Instance.new("BillboardGui")
-        billboardGui.Parent = handle
-        billboardGui.Adornee = handle
-        billboardGui.Size = UDim2.new(0, 25, 0, 25) -- ขนาดของ BillboardGui
-        billboardGui.StudsOffset = Vector3.new(0, 2, 0) -- ยกขึ้นมาด้านบน Handle
-        billboardGui.AlwaysOnTop = true -- ทำให้ข้อความอยู่ด้านบนเสมอ
-
-        local textLabel = Instance.new("TextLabel")
-        textLabel.Parent = billboardGui
-        textLabel.Size = UDim2.new(1, 0, 1, 0)
-        textLabel.BackgroundTransparency = 1 -- ทำให้ไม่มีพื้นหลัง
-        textLabel.Text = "Rose"
-        textLabel.TextColor3 = Color3.fromRGB(0, 255, 0) -- สีเขียว
-        textLabel.TextTransparency = 0 -- ไม่โปร่งใส
-        textLabel.TextScaled = true -- ทำให้ขนาดตัวอักษรปรับอัตโนมัติตามขนาดกล่อง
-
-    else
-        print("Handle not found inside Rose")
-    end
-else
-    print("Part 'Rose' not found in Workspace")
-end
-
--- ค้นหา Holder ทั้งหมดใน Workspace
-local holders = game.Workspace:GetChildren()
-
-for _, holder in ipairs(holders) do
-    -- ตรวจสอบว่าเป็น Holder หรือไม่
-    if holder:IsA("Model") and holder.Name == "Holder" then
-        -- ลบ Highlight เก่า
-        local oldHighlight = holder:FindFirstChildOfClass("Highlight")
-        if oldHighlight then
-            oldHighlight:Destroy()
-        end
-
-        -- สร้าง Highlight ใหม่
-        local highlight = Instance.new("Highlight")
-        highlight.Parent = holder
-        highlight.FillTransparency = 1 -- ข้างในโปร่งใส
-        highlight.OutlineColor = Color3.fromRGB(0, 255, 0) -- เส้นขอบสีเขียว
-        highlight.OutlineTransparency = 0 -- เส้นขอบไม่โปร่งใส
-
-        -- ลบ BillboardGui (ESP Text) เก่า
-        local oldBillboard = holder:FindFirstChild("HolderBillboard")
-        if oldBillboard then
-            oldBillboard:Destroy()
-        end
-
-        -- สร้าง BillboardGui (ESP Text) ใหม่
-        local billboardGui = Instance.new("BillboardGui")
-        billboardGui.Name = "HolderBillboard"
-        billboardGui.Adornee = holder -- ทำให้ BillboardGui ยึดกับ Holder
-        billboardGui.Size = UDim2.new(0, 25, 0, 25)
-        billboardGui.StudsOffset = Vector3.new(0, 3, 0) -- ยกขึ้นเล็กน้อย
-        billboardGui.AlwaysOnTop = true -- ให้แสดงผลตลอดเวลา
-        billboardGui.Parent = holder
-
-        -- เพิ่ม TextLabel สำหรับ ESP Text
-        local textLabel = Instance.new("TextLabel")
-        textLabel.Size = UDim2.new(1, 0, 1, 0)
-        textLabel.BackgroundTransparency = 1
-        textLabel.Text = "Holder"
-        textLabel.TextColor3 = Color3.fromRGB(0, 255, 0) -- สีเขียว
-        textLabel.TextScaled = true
-        textLabel.Parent = billboardGui
-
-        print("Highlight and ESP Text added to " .. holder.Name)
-    end
-end
-        end  
-	})
-
-bTab:AddButton({
-	Name = "esp Monster",
-	Callback = function()
--- ตรวจสอบว่า GameAI โฟลเดอร์อยู่ใน Workspace หรือไม่
-local gameAIFolder = workspace:FindFirstChild("GameAI")
-
-if gameAIFolder then
-    -- วนลูปเพื่อแสดงรายการสิ่งที่อยู่ในโฟลเดอร์ GameAI
-    for _, item in pairs(gameAIFolder:GetChildren()) do
-        if item:IsA("Model") and item.Name == "AI" then  -- ตรวจสอบว่าเป็นโมเดลและชื่อว่า AI หรือไม่
-            -- ลบ Highlight เดิมถ้ามี
-            local existingHighlight = item:FindFirstChildOfClass("Highlight")
-            if existingHighlight then
-                existingHighlight:Destroy()
+local Toggle = cTab:CreateToggle({
+   Name = "ESP item",
+   CurrentValue = false,
+   Flag = "Toggle1",
+   Callback = function(Value)
+   if Value then
+		for i, v in pairs(workspace.Givers:GetDescendants()) do
+             if v:FindFirstChild("Handle") and not v:FindFirstChild("Fack HUB") then
+                     local BillboardGui = Instance.new("BillboardGui")
+                     BillboardGui.Parent = v
+                     BillboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+                     BillboardGui.Active = true
+                     BillboardGui.Name = "Fack HUB"
+                     BillboardGui.AlwaysOnTop = true
+                     BillboardGui.LightInfluence = 1.000
+                     BillboardGui.Size = UDim2.new(0, 200, 0, 200)
+     
+                     local TextLabel = Instance.new("TextLabel")
+                     TextLabel.Parent = BillboardGui
+                     TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                     TextLabel.BackgroundTransparency = 1.000
+                     TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+                     TextLabel.BorderSizePixel = 0
+                     TextLabel.Position = UDim2.new(0, 0, 0.2, 0)
+                     TextLabel.Size = UDim2.new(0, 200, 0, 50)
+                     TextLabel.Font = Enum.Font.FredokaOne
+                     TextLabel.Text = v.Name
+                     TextLabel.TextColor3 = Color3.fromRGB(81, 255, 0)
+                     TextLabel.TextSize = 25
+                     TextLabel.TextStrokeTransparency = 0
+                     TextLabel.TextWrapped = true
+                 end
+             end
+		for i, v in pairs(workspace.Rose:GetDescendants()) do
+             if v:IsA("MeshPart") and not v:FindFirstChild("Fack HUB") then
+                     local BillboardGui = Instance.new("BillboardGui")
+                     BillboardGui.Parent = v
+                     BillboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+                     BillboardGui.Active = true
+                     BillboardGui.Name = "Fack HUB"
+                     BillboardGui.AlwaysOnTop = true
+                     BillboardGui.LightInfluence = 1.000
+                     BillboardGui.Size = UDim2.new(0, 200, 0, 200)
+     
+                     local TextLabel = Instance.new("TextLabel")
+                     TextLabel.Parent = BillboardGui
+                     TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                     TextLabel.BackgroundTransparency = 1.000
+                     TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+                     TextLabel.BorderSizePixel = 0
+                     TextLabel.Position = UDim2.new(0, 0, 0.2, 0)
+                     TextLabel.Size = UDim2.new(0, 200, 0, 50)
+                     TextLabel.Font = Enum.Font.FredokaOne
+                     TextLabel.Text = "Rose"
+                     TextLabel.TextColor3 = Color3.fromRGB(81, 255, 0)
+                     TextLabel.TextSize = 25
+                     TextLabel.TextStrokeTransparency = 0
+                     TextLabel.TextWrapped = true
+                 end
+             end
+		for i, v in pairs(workspace.BellFolder:GetDescendants()) do
+             if v:IsA("MeshPart") and not v:FindFirstChild("Fack HUB") then
+                     local BillboardGui = Instance.new("BillboardGui")
+                     BillboardGui.Parent = v
+                     BillboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+                     BillboardGui.Active = true
+                     BillboardGui.Name = "Fack HUB"
+                     BillboardGui.AlwaysOnTop = true
+                     BillboardGui.LightInfluence = 1.000
+                     BillboardGui.Size = UDim2.new(0, 200, 0, 200)
+     
+                     local TextLabel = Instance.new("TextLabel")
+                     TextLabel.Parent = BillboardGui
+                     TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                     TextLabel.BackgroundTransparency = 1.000
+                     TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+                     TextLabel.BorderSizePixel = 0
+                     TextLabel.Position = UDim2.new(0, 0, 0.2, 0)
+                     TextLabel.Size = UDim2.new(0, 200, 0, 50)
+                     TextLabel.Font = Enum.Font.FredokaOne
+                     TextLabel.Text = "Bell"
+                     TextLabel.TextColor3 = Color3.fromRGB(81, 255, 0)
+                     TextLabel.TextSize = 25
+                     TextLabel.TextStrokeTransparency = 0
+                     TextLabel.TextWrapped = true
+                 end
+             end
+     else
+         for i, v in pairs(workspace.Givers:GetDescendants()) do
+            if v:IsA("BillboardGui") and v.Name == "Fack HUB" then
+               v:Destroy()
             end
-            
-            -- สร้าง Highlight ใหม่
-            local highlight = Instance.new("Highlight")
-            highlight.Name = "Highlight"
-            highlight.Parent = item
-            highlight.FillColor = Color3.new(1, 0, 0)  -- สีแดง
-            highlight.FillTransparency = 0.5  -- โปร่งใส 50%
-            highlight.OutlineColor = Color3.new(1, 0, 0)  -- สีแดง
-            highlight.OutlineTransparency = 0  -- ไม่มีความโปร่งใสของขอบ
         end
-    end
-else
-    print("ไม่พบโฟลเดอร์ GameAI ใน Workspace")
-end
-        end  
-	})
+		for i, v in pairs(workspace.Rose:GetDescendants()) do
+            if v:IsA("BillboardGui") and v.Name == "Fack HUB" then
+               v:Destroy()
+            end
+        end
+	    for i, v in pairs(workspace.BellFolder:GetDescendants()) do
+            if v:IsA("BillboardGui") and v.Name == "Fack HUB" then
+               v:Destroy()
+            end
+        end
+	end
+   end,
+})
+
+local Toggle = cTab:CreateToggle({
+   Name = "ESP Monster",
+   CurrentValue = false,
+   Flag = "Toggle1", 
+   Callback = function(Value)
+      if Value then
+         for k, v in pairs(workspace.GameAI:GetChildren()) do
+            if v:IsA("Model") and v.Name == "AI" and not v:FindFirstChild("Fack HUB") then
+               local highlight = Instance.new("Highlight")
+               highlight.Parent = v
+               highlight.Name = "Fack HUB"
+               highlight.FillColor = Color3.fromRGB(255, 0, 0) 
+               highlight.OutlineColor = Color3.fromRGB(255, 0, 0)
+               highlight.FillTransparency = 0.5
+               highlight.OutlineTransparency = 0
+               highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+            end
+         end
+      else
+         for k, v in pairs(workspace.GameAI:GetDescendants()) do
+            if v:IsA("Highlight") and v.Name == "Fack HUB" then
+               v:Destroy()
+            end
+         end
+      end
+   end,
+})
 end
 
 local allowedPlaceIds = {6682164423}
 
 if table.find(allowedPlaceIds, game.PlaceId) then
-local Section = bTab:AddSection({
-	Name = "omukade"
+
+local Section = cTab:CreateSection("Auto Win")
+
+local Button = cTab:CreateButton({
+   Name = "Auto Win",
+   Callback = function()
+      game.Players.LocalPlayer.character.HumanoidRootPart.CFrame = CFrame.new(-643.695007, 948.410156, -1491.67163, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+   end,
 })
 
-bTab:AddButton({
-	Name = "auto win",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(288.670288, 664.400696, -1330.86584, 0, 0, 1, 0, 1, -0, -1, 0, 0)
-  	end  
-	})
+local Section = cTab:CreateSection("ESP")
 
-local Section = bTab:AddSection({
-	Name = "omukade1"
-})
+local Toggle = cTab:CreateToggle({
+   Name = "ESP item",
+   CurrentValue = false,
+   Flag = "Toggle1",
+   Callback = function(Value)
+      if Value then
+         for i, v in pairs(workspace:GetChildren()) do
+             if v:IsA("Model") and v.Name == "Key1" and not v:FindFirstChild("Fack HUB") then
+                 local handle = v:FindFirstChild("Handle")
+                 if handle then
+                     local BillboardGui = Instance.new("BillboardGui")
+                     BillboardGui.Parent = handle
+                     BillboardGui.Name = "Fack HUB"
+                     BillboardGui.AlwaysOnTop = true
+                     BillboardGui.LightInfluence = 0
+                     BillboardGui.Size = UDim2.new(0, 100, 0, 50)
+                     BillboardGui.StudsOffset = Vector3.new(0, 2, 0)
 
-bTab:AddButton({
-	Name = "auto win",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-653.394043, 666.746033, -1020.17737, 0, 0, 1, 0, 1, -0, -1, 0, 01)
-  	end  
-	})
-
-local Section = bTab:AddSection({
-	Name = "House"
-})
-
-bTab:AddButton({
-	Name = "auto win",
-	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-643.695007, 948.410156, -1491.67163, 0, 0, 1, 0, 1, -0, -1, 0, 0)
-  	end  
-	})
-
-local Section = bTab:AddSection({
-	Name = "ESP"
-})
-
-bTab:AddButton({
-	Name = "esp item",
-	Callback = function()
-local keyModel = game.Workspace:FindFirstChild("Key1") -- ค้นหา Model ที่ชื่อ Key1
-
-if keyModel and keyModel:IsA("Model") then
-    local handle = keyModel:FindFirstChild("Handle") -- ค้นหา Handle ใน Model Key1
-    
-    if handle then
-        -- ตรวจสอบและจัดการ Highlight
-        local oldHighlight = handle:FindFirstChildOfClass("Highlight")
-        if oldHighlight then
-            oldHighlight:Destroy() -- ลบ Highlight อันเดิมถ้ามี
+                     local TextLabel = Instance.new("TextLabel")
+                     TextLabel.Parent = BillboardGui
+                     TextLabel.BackgroundTransparency = 1
+                     TextLabel.Size = UDim2.new(1, 0, 1, 0)
+                     TextLabel.Font = Enum.Font.FredokaOne
+                     TextLabel.Text = "Key"
+                     TextLabel.TextColor3 = Color3.fromRGB(81, 255, 0)
+                     TextLabel.TextSize = 20
+                     TextLabel.TextStrokeTransparency = 0
+                 end
+             end
+         end
+for k, v in ipairs(workspace:GetChildren()) do
+    if v:IsA("Model") and v.Name == "CodeDoor" and not v:FindFirstChild("Fack HUB") then
+		for i, v in ipairs(v:GetChildren()) do
+			if v:IsA("MeshPart") then
+               local highlight = Instance.new("Highlight")
+               highlight.Parent = v
+               highlight.Name = "Fack HUB"
+               highlight.FillColor = Color3.fromRGB(0, 255, 0) 
+               highlight.OutlineColor = Color3.fromRGB(0, 255, 0)
+               highlight.FillTransparency = 0.5
+               highlight.OutlineTransparency = 0
+               highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+            end
         end
-        
-        -- เพิ่ม Highlight ใหม่
-        local highlight = Instance.new("Highlight")
-        highlight.Parent = handle
-        highlight.FillColor = Color3.new(0, 1, 0) -- สีข้างในเป็นสีเขียว
-        highlight.FillTransparency = 0.5 -- โปร่งใสบางส่วน
-        highlight.OutlineColor = Color3.new(0, 1, 0) -- สีขอบสีเขียว
-        highlight.OutlineTransparency = 0 -- ขอบไม่โปร่งใส
-
-        print("เพิ่ม Highlight ให้กับ Handle ใน Key1 แล้ว")
-    else
-        print("ไม่พบ Handle ใน Model Key1")
-    end
-else
-    print("ไม่พบ Model ที่ชื่อ Key1 ใน Workspace")
+	end
 end
-
--- ฟังก์ชันสำหรับเพิ่ม Highlight ให้กับ MeshPart
-local function addHighlight(meshPart)
-    -- ตรวจสอบว่า MeshPart มี Highlight เดิมอยู่หรือไม่ ถ้ามีให้ลบทิ้ง
-    local oldHighlight = meshPart:FindFirstChildOfClass("Highlight")
-    if oldHighlight then
-        oldHighlight:Destroy()  -- ลบ Highlight เดิม
-    end
-
-    -- สร้าง Highlight ใหม่
-    local highlight = Instance.new("Highlight")
-    highlight.Parent = meshPart  -- ตั้ง Parent เป็น MeshPart
-    highlight.FillTransparency = 0.5  -- ปรับความโปร่งใสของ Fill
-    highlight.FillColor = Color3.new(0, 1, 0)  -- สีเขียว (RGB: 0, 255, 0)
-    highlight.OutlineColor = Color3.new(0, 1, 0)  -- สีเขียวสำหรับเส้นขอบ
-    highlight.OutlineTransparency = 0  -- เส้นขอบโปร่งใสน้อยที่สุด
+      else
+         local keyModel = workspace:FindFirstChild("Key1")
+         if keyModel then
+            for i, v in pairs(keyModel:GetDescendants()) do
+                if v:IsA("BillboardGui") and v.Name == "Fack HUB" then
+                    v:Destroy()
+                end
+            end
+         end
+	for i, v in ipairs(workspace:GetChildren()) do
+        if v:IsA("Model") and v.Name == "CodeDoor" then
+			for i, v in ipairs(v:GetDescendants()) do
+				if v:IsA("Highlight") and v.Name == "Fack HUB" then
+              		v:Destroy()
+            end
+         end
+      end
+	end
 end
-
--- ฟังก์ชันสำหรับจัดการ CodeDoor แต่ละตัว
-local function processCodeDoor(codeDoor)
-    -- ใช้ GetDescendants() เพื่อดึง Object ทั้งหมดภายใน CodeDoor
-    for _, descendant in pairs(codeDoor:GetDescendants()) do
-        if descendant:IsA("MeshPart") then  -- ตรวจสอบว่าเป็น MeshPart หรือไม่
-            addHighlight(descendant)  -- เพิ่ม Highlight ให้ MeshPart
-            print("Highlight added to MeshPart: " .. descendant.Name)
-        end
-    end
-end
-
--- ค้นหา Model ทั้งหมดที่ชื่อ CodeDoor ใน Workspace
-for _, obj in pairs(workspace:GetChildren()) do
-    if obj:IsA("Model") and obj.Name == "CodeDoor" then
-        processCodeDoor(obj)  -- จัดการ Model แต่ละตัว
-    end
-end
-        end  
-	})
-
-bTab:AddButton({
-	Name = "esp Monster",
-	Callback = function()
-local modelName = "omukadeMAIN"
-local model = game.Workspace:FindFirstChild(modelName)
-
-if model then
-    -- ตรวจสอบและลบ Highlight ที่มีอยู่เดิม (ถ้ามี)
-    local existingHighlight = model:FindFirstChildOfClass("Highlight")
-    if existingHighlight then
-        existingHighlight:Destroy()
-    end
-
-    -- สร้าง Highlight ใหม่
-    local highlight = Instance.new("Highlight")
-    highlight.Parent = model
-    highlight.FillColor = Color3.fromRGB(255, 0, 0)  -- สีขอบแดง
-    highlight.FillTransparency = 0.5  -- ความโปร่งใส (0 = ทึบ, 1 = โปร่งใส)
-    highlight.OutlineColor = Color3.fromRGB(255, 0, 0)  -- สีขอบนอกแดง
-    highlight.OutlineTransparency = 0  -- ขอบไม่โปร่งใส (0 = ไม่โปร่งใส)
-
-    print("Highlight added to " .. modelName)
-else
-    print("Model " .. modelName .. " is not found in Workspace.")
-end
-        end  
-	})
-end
-
-local aTab = Window:MakeTab({
-	Name = "book1 chapter4",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-	})
-
-local Section = aTab:AddSection({
-	Name = "รอมีเวลาาาาาาา"
+   end,
 })
 
-OrionLib:Init()
+local Toggle = cTab:CreateToggle({
+   Name = "ESP Monster",
+   CurrentValue = false,
+   Flag = "Toggle1", 
+   Callback = function(Value)
+      if Value then
+         for k, v in pairs(workspace:GetChildren()) do
+            if v:IsA("Model") and v.Name == "omukadeMAIN" and not v:FindFirstChild("Fack HUB") then
+               local highlight = Instance.new("Highlight")
+               highlight.Parent = v
+               highlight.Name = "Fack HUB"
+               highlight.FillColor = Color3.fromRGB(255, 0, 0) 
+               highlight.OutlineColor = Color3.fromRGB(255, 0, 0)
+               highlight.FillTransparency = 0.5
+               highlight.OutlineTransparency = 0
+               highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+            end
+         end
+      else
+         for k, v in pairs(workspace.omukadeMAIN:GetDescendants()) do
+            if v:IsA("Highlight") and v.Name == "Fack HUB" then
+               v:Destroy()
+            end
+         end
+      end
+   end,
+})
+end
