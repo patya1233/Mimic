@@ -34,8 +34,6 @@ local Window = Rayfield:CreateWindow({
    }
 })
 
-game:GetService("CoreGui")["Rayfield-Old"]:Destroy()
-
 local aTab = Window:CreateTab("b1c1", "rewind")
 
 local allowedPlaceIds = {6296321810}
@@ -1050,3 +1048,483 @@ local Toggle = cTab:CreateToggle({
    end,
 })
 end
+
+local dTab = Window:CreateTab("b1c4", "rewind")
+
+local allowedPlaceIds = {7251865082}
+
+if table.find(allowedPlaceIds, game.PlaceId) then
+
+local Section = dTab:CreateSection("Auto Win")
+
+local Button = dTab:CreateButton({
+   Name = "Auto Win",
+   Callback = function()
+      game.Players.LocalPlayer.character.HumanoidRootPart.CFrame = CFrame.new(88.1409454, -47.2177963, -1415.82458, 4.47034836e-06, -0.00181728601, -0.99999845, 1, 4.47034836e-06, 4.55975533e-06, 4.55975533e-06, -0.99999845, 0.00181722641)
+   end,
+})
+
+local Section = dTab:CreateSection("ESP")
+
+local Toggle = dTab:CreateToggle({
+   Name = "ESP item",
+   CurrentValue = false,
+   Flag = "Toggle1",
+   Callback = function(Value)
+      if Value then
+local children = workspace:GetChildren()
+
+if #children >= 120 then
+    local model = children[120]
+    if model:FindFirstChild("Model") and model.Model:FindFirstChild("Model") then
+        for i, v in pairs(model.Model.Model:GetDescendants()) do
+            if v:FindFirstChild("Handle") and not v:FindFirstChild("Fack HUB") then
+                local BillboardGui = Instance.new("BillboardGui")
+                BillboardGui.Parent = v
+                BillboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+                BillboardGui.Active = true
+                BillboardGui.Name = "Fack HUB"
+                BillboardGui.AlwaysOnTop = true
+                BillboardGui.LightInfluence = 1.000
+                BillboardGui.Size = UDim2.new(0, 200, 0, 200)
+                
+                local TextLabel = Instance.new("TextLabel")
+                TextLabel.Parent = BillboardGui
+                TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                TextLabel.BackgroundTransparency = 1.000
+                TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+                TextLabel.BorderSizePixel = 0
+                TextLabel.Position = UDim2.new(0, 0, 0.2, 0)
+                TextLabel.Size = UDim2.new(0, 200, 0, 50)
+                TextLabel.Font = Enum.Font.FredokaOne
+                TextLabel.Text = "Key1"
+                TextLabel.TextColor3 = Color3.fromRGB(81, 255, 0)
+                TextLabel.TextSize = 25
+                TextLabel.TextStrokeTransparency = 0
+                TextLabel.TextWrapped = true
+            end
+        end
+    end
+end
+local children = workspace:GetChildren()
+local targetChild = children[31]
+
+if targetChild and targetChild:IsA("Model") and targetChild:FindFirstChild("Handle") and not targetChild.Handle:FindFirstChild("Fack HUB") then
+    local BillboardGui = Instance.new("BillboardGui")
+    BillboardGui.Parent = targetChild.Handle
+    BillboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    BillboardGui.Active = true
+    BillboardGui.Name = "Fack HUB"
+    BillboardGui.AlwaysOnTop = true
+    BillboardGui.LightInfluence = 1.000
+    BillboardGui.Size = UDim2.new(0, 200, 0, 200)
+    
+    local TextLabel = Instance.new("TextLabel")
+    TextLabel.Parent = BillboardGui
+    TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    TextLabel.BackgroundTransparency = 1.000
+    TextLabel.Position = UDim2.new(0, 0, 0.2, 0)
+    TextLabel.Size = UDim2.new(0, 200, 0, 50)
+    TextLabel.Font = Enum.Font.FredokaOne
+    TextLabel.Text = "Key2"
+    TextLabel.TextColor3 = Color3.fromRGB(81, 255, 0)
+    TextLabel.TextSize = 25
+    TextLabel.TextStrokeTransparency = 0
+    TextLabel.TextWrapped = true
+end
+local children = workspace:GetChildren()
+local targetChild = children[29]
+
+if targetChild and targetChild:IsA("Model") and targetChild:FindFirstChild("Handle") and not targetChild.Handle:FindFirstChild("Fack HUB") then
+    local BillboardGui = Instance.new("BillboardGui")
+    BillboardGui.Parent = targetChild.Handle
+    BillboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    BillboardGui.Active = true
+    BillboardGui.Name = "Fack HUB"
+    BillboardGui.AlwaysOnTop = true
+    BillboardGui.LightInfluence = 1.000
+    BillboardGui.Size = UDim2.new(0, 200, 0, 200)
+    
+    local TextLabel = Instance.new("TextLabel")
+    TextLabel.Parent = BillboardGui
+    TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    TextLabel.BackgroundTransparency = 1.000
+    TextLabel.Position = UDim2.new(0, 0, 0.2, 0)
+    TextLabel.Size = UDim2.new(0, 200, 0, 50)
+    TextLabel.Font = Enum.Font.FredokaOne
+    TextLabel.Text = "Crowbars"
+    TextLabel.TextColor3 = Color3.fromRGB(81, 255, 0)
+    TextLabel.TextSize = 25
+    TextLabel.TextStrokeTransparency = 0
+    TextLabel.TextWrapped = true
+end
+local children = workspace:GetChildren()
+local targetChild = children[27]
+
+if targetChild and targetChild:IsA("Model") and targetChild:FindFirstChild("Handle") and not targetChild.Handle:FindFirstChild("Fack HUB") then
+    local BillboardGui = Instance.new("BillboardGui")
+    BillboardGui.Parent = targetChild.Handle
+    BillboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    BillboardGui.Active = true
+    BillboardGui.Name = "Fack HUB"
+    BillboardGui.AlwaysOnTop = true
+    BillboardGui.LightInfluence = 1.000
+    BillboardGui.Size = UDim2.new(0, 200, 0, 200)
+    
+    local TextLabel = Instance.new("TextLabel")
+    TextLabel.Parent = BillboardGui
+    TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    TextLabel.BackgroundTransparency = 1.000
+    TextLabel.Position = UDim2.new(0, 0, 0.2, 0)
+    TextLabel.Size = UDim2.new(0, 200, 0, 50)
+    TextLabel.Font = Enum.Font.FredokaOne
+    TextLabel.Text = "Key3"
+    TextLabel.TextColor3 = Color3.fromRGB(81, 255, 0)
+    TextLabel.TextSize = 25
+    TextLabel.TextStrokeTransparency = 0
+    TextLabel.TextWrapped = true
+end
+	else
+         for i, v in pairs(workspace:GetDescendants()) do
+            if v:IsA("BillboardGui") and v.Name == "Fack HUB" then
+               v:Destroy()
+            end
+         end
+      end
+   end,
+})
+
+local Toggle = dTab:CreateToggle({
+   Name = "ESP Monster",
+   CurrentValue = false,
+   Flag = "Toggle1", 
+   Callback = function(Value)
+      if Value then
+         for k, v in pairs(workspace.GameAI:GetChildren()) do
+            if v:IsA("Model") and not v:FindFirstChild("Fack HUB") then
+               local highlight = Instance.new("Highlight")
+               highlight.Parent = v
+               highlight.Name = "Fack HUB"
+               highlight.FillColor = Color3.fromRGB(255, 0, 0) 
+               highlight.OutlineColor = Color3.fromRGB(255, 0, 0)
+               highlight.FillTransparency = 0.5
+               highlight.OutlineTransparency = 0
+               highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+            end
+         end
+      else
+         for k, v in pairs(workspace.GameAI:GetDescendants()) do
+            if v:IsA("Highlight") and v.Name == "Fack HUB" then
+               v:Destroy()
+            end
+         end
+      end
+   end,
+})
+end
+
+local allowedPlaceIds = {7251866503}
+
+if table.find(allowedPlaceIds, game.PlaceId) then
+
+local Section = dTab:CreateSection("Auto Win")
+
+local Button = dTab:CreateButton({
+   Name = "Auto Win",
+   Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1025.33289, 2.67823577, 122.2911, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+wait(0.5)
+   local butterflies = game.Workspace.Butterflies:GetChildren()
+
+for i, v in ipairs(butterflies) do
+    for i, v in ipairs(v:GetChildren()) do
+        if v:IsA("ProximityPrompt") then
+            v.HoldDuration = 0
+            v.MaxActivationDistance = 10
+            v.RequiresLineOfSight = false
+            v.Exclusivity = Enum.ProximityPromptExclusivity.AlwaysShow
+        end
+    end
+end
+
+local camera = workspace.CurrentCamera
+local desiredCFrame = CFrame.new(Vector3.new(0, 10, 0), Vector3.new(0, 0, 0))
+local prl = game.Players.LocalPlayer.Character.HumanoidRootPart
+
+for i, v in pairs(workspace.Butterflies:GetChildren()) do
+	if v.Name == "Butterfly" then
+		local prox = v:FindFirstChild("ProximityPrompt")
+		prl.CFrame = v.CFrame
+		camera.CFrame = desiredCFrame
+		if prox then
+		wait(0.2)
+		fireproximityprompt(prox)
+		wait(0.2)
+		end
+	end
+end
+   end,
+})
+
+local Section = dTab:CreateSection("ESP")
+
+local Toggle = dTab:CreateToggle({
+   Name = "ESP item",
+   CurrentValue = false,
+   Flag = "Toggle1",
+   Callback = function(Value)
+      if Value then
+         for i, v in pairs(workspace.Butterflies:GetChildren()) do
+             if v.Name == "Butterfly" and not v:FindFirstChild("Fack HUB") then
+                     local BillboardGui = Instance.new("BillboardGui")
+                     BillboardGui.Parent = v
+                     BillboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+                     BillboardGui.Active = true
+                     BillboardGui.Name = "Fack HUB"
+                     BillboardGui.AlwaysOnTop = true
+                     BillboardGui.LightInfluence = 1.000
+                     BillboardGui.Size = UDim2.new(0, 200, 0, 200)
+     
+                     local TextLabel = Instance.new("TextLabel")
+                     TextLabel.Parent = BillboardGui
+                     TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                     TextLabel.BackgroundTransparency = 1.000
+                     TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+                     TextLabel.BorderSizePixel = 0
+                     TextLabel.Position = UDim2.new(0, 0, 0.2, 0)
+                     TextLabel.Size = UDim2.new(0, 200, 0, 50)
+                     TextLabel.Font = Enum.Font.FredokaOne
+                     TextLabel.Text = v.Name
+                     TextLabel.TextColor3 = Color3.fromRGB(81, 255, 0)
+                     TextLabel.TextSize = 25
+                     TextLabel.TextStrokeTransparency = 0
+                     TextLabel.TextWrapped = true
+                 end
+             end
+		 for k, v in pairs(workspace.Butterflies:GetChildren()) do
+            if v:IsA("Part") and not v:IsA("Highlight") then
+               local highlight = Instance.new("Highlight")
+               highlight.Parent = v
+               highlight.Name = "Fack HUB"
+               highlight.FillColor = Color3.fromRGB(0, 255, 0) 
+               highlight.OutlineColor = Color3.fromRGB(0, 255, 0)
+               highlight.FillTransparency = 0.5
+               highlight.OutlineTransparency = 0
+               highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+            end
+         end
+      else
+         for i, v in pairs(workspace.Butterflies:GetDescendants()) do
+            if v:IsA("BillboardGui") and v.Name == "Fack HUB" then
+               v:Destroy()
+            end
+         end
+         for k, v in pairs(workspace.Butterflies:GetDescendants()) do
+            if v:IsA("Highlight") and v.Name == "Fack HUB" then
+               v:Destroy()
+            end
+         end
+      end
+   end,
+})
+
+local Toggle = dTab:CreateToggle({
+   Name = "ESP Monster",
+   CurrentValue = false,
+   Flag = "Toggle1", 
+   Callback = function(Value)
+      if Value then
+         for k, v in pairs(workspace.GameAI:GetChildren()) do
+            if v:IsA("Model") and not v:FindFirstChild("Fack HUB") then
+               local highlight = Instance.new("Highlight")
+               highlight.Parent = v
+               highlight.Name = "Fack HUB"
+               highlight.FillColor = Color3.fromRGB(255, 0, 0) 
+               highlight.OutlineColor = Color3.fromRGB(255, 0, 0)
+               highlight.FillTransparency = 0.5
+               highlight.OutlineTransparency = 0
+               highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+            end
+         end
+      else
+         for k, v in pairs(workspace.GameAI:GetDescendants()) do
+            if v:IsA("Highlight") and v.Name == "Fack HUB" then
+               v:Destroy()
+            end
+         end
+      end
+   end,
+})
+end
+
+local allowedPlaceIds = {7251867155}
+
+if table.find(allowedPlaceIds, game.PlaceId) then
+
+local Section = dTab:CreateSection("Auto Win")
+
+
+
+local Section = dTab:CreateSection("ESP")
+
+local Toggle = dTab:CreateToggle({
+   Name = "ESP item",
+   CurrentValue = false,
+   Flag = "Toggle1",
+   Callback = function(Value)
+   if Value then
+	         for i, v in pairs(workspace:GetChildren()) do
+             if v.Name == "ThreeDTextObject" then
+			 for i, v in pairs(v:GetChildren()) do
+				 if v.Name == "ThreeDTextBoundingBox" and not v:FindFirstChild("Fack HUB") then
+                     local BillboardGui = Instance.new("BillboardGui")
+                     BillboardGui.Parent = v
+                     BillboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+                     BillboardGui.Active = true
+                     BillboardGui.Name = "Fack HUB"
+                     BillboardGui.AlwaysOnTop = true
+                     BillboardGui.LightInfluence = 1.000
+                     BillboardGui.Size = UDim2.new(0, 200, 0, 200)
+     
+                     local TextLabel = Instance.new("TextLabel")
+                     TextLabel.Parent = BillboardGui
+                     TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                     TextLabel.BackgroundTransparency = 1.000
+                     TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+                     TextLabel.BorderSizePixel = 0
+                     TextLabel.Position = UDim2.new(0, 0, 0.2, 0)
+                     TextLabel.Size = UDim2.new(0, 200, 0, 50)
+                     TextLabel.Font = Enum.Font.FredokaOne
+                     TextLabel.Text = 2573
+                     TextLabel.TextColor3 = Color3.fromRGB(81, 255, 0)
+                     TextLabel.TextSize = 25
+                     TextLabel.TextStrokeTransparency = 0
+                     TextLabel.TextWrapped = true
+                 end
+             end
+		end
+	end
+         for i, v in pairs(workspace:GetDescendants()) do
+             if v.Name == "Spirit" and not v:FindFirstChild("Fack HUB") then
+                     local BillboardGui = Instance.new("BillboardGui")
+                     BillboardGui.Parent = v
+                     BillboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+                     BillboardGui.Active = true
+                     BillboardGui.Name = "Fack HUB"
+                     BillboardGui.AlwaysOnTop = true
+                     BillboardGui.LightInfluence = 1.000
+                     BillboardGui.Size = UDim2.new(0, 200, 0, 200)
+     
+                     local TextLabel = Instance.new("TextLabel")
+                     TextLabel.Parent = BillboardGui
+                     TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                     TextLabel.BackgroundTransparency = 1.000
+                     TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+                     TextLabel.BorderSizePixel = 0
+                     TextLabel.Position = UDim2.new(0, 0, 0.2, 0)
+                     TextLabel.Size = UDim2.new(0, 200, 0, 50)
+                     TextLabel.Font = Enum.Font.FredokaOne
+                     TextLabel.Text = "Butterfly"
+                     TextLabel.TextColor3 = Color3.fromRGB(81, 255, 0)
+                     TextLabel.TextSize = 25
+                     TextLabel.TextStrokeTransparency = 0
+                     TextLabel.TextWrapped = true
+                 end
+             end
+         for i, v in pairs(workspace:GetChildren()) do
+             if v.Name == "Key" then
+			 	for i, v in pairs(v:GetChildren()) do
+				 if v.Name == "Handle" and not v:FindFirstChild("Fack HUB") then
+                     local BillboardGui = Instance.new("BillboardGui")
+                     BillboardGui.Parent = v
+                     BillboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+                     BillboardGui.Active = true
+                     BillboardGui.Name = "Fack HUB"
+                     BillboardGui.AlwaysOnTop = true
+                     BillboardGui.LightInfluence = 1.000
+                     BillboardGui.Size = UDim2.new(0, 200, 0, 200)
+     
+                     local TextLabel = Instance.new("TextLabel")
+                     TextLabel.Parent = BillboardGui
+                     TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                     TextLabel.BackgroundTransparency = 1.000
+                     TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+                     TextLabel.BorderSizePixel = 0
+                     TextLabel.Position = UDim2.new(0, 0, 0.2, 0)
+                     TextLabel.Size = UDim2.new(0, 200, 0, 50)
+                     TextLabel.Font = Enum.Font.FredokaOne
+                     TextLabel.Text = "Key"
+                     TextLabel.TextColor3 = Color3.fromRGB(81, 255, 0)
+                     TextLabel.TextSize = 25
+                     TextLabel.TextStrokeTransparency = 0
+                     TextLabel.TextWrapped = true
+                 end
+             end
+		end
+	end
+         for i, v in pairs(workspace.GameInfo.PuzzleItems:GetChildren()) do
+             if v.Name == "GrabItem" and not v:FindFirstChild("Fack HUB") then
+                     local BillboardGui = Instance.new("BillboardGui")
+                     BillboardGui.Parent = v
+                     BillboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+                     BillboardGui.Active = true
+                     BillboardGui.Name = "Fack HUB"
+                     BillboardGui.AlwaysOnTop = true
+                     BillboardGui.LightInfluence = 1.000
+                     BillboardGui.Size = UDim2.new(0, 200, 0, 200)
+     
+                     local TextLabel = Instance.new("TextLabel")
+                     TextLabel.Parent = BillboardGui
+                     TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                     TextLabel.BackgroundTransparency = 1.000
+                     TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+                     TextLabel.BorderSizePixel = 0
+                     TextLabel.Position = UDim2.new(0, 0, 0.2, 0)
+                     TextLabel.Size = UDim2.new(0, 200, 0, 50)
+                     TextLabel.Font = Enum.Font.FredokaOne
+                     TextLabel.Text = v.Name
+                     TextLabel.TextColor3 = Color3.fromRGB(81, 255, 0)
+                     TextLabel.TextSize = 25
+                     TextLabel.TextStrokeTransparency = 0
+                     TextLabel.TextWrapped = true
+                 end
+             end
+      else
+         for i, v in pairs(workspace:GetDescendants()) do
+            if v:IsA("BillboardGui") and v.Name == "Fack HUB" then
+               v:Destroy()
+            end
+         end
+	end
+   end,
+})
+
+local Toggle = dTab:CreateToggle({
+   Name = "ESP Monster",
+   CurrentValue = false,
+   Flag = "Toggle1", 
+   Callback = function(Value)
+      if Value then
+         for k, v in pairs(workspace.GameAI:GetChildren()) do
+            if v:IsA("Model") and not v:FindFirstChild("Fack HUB") then
+               local highlight = Instance.new("Highlight")
+               highlight.Parent = v
+               highlight.Name = "Fack HUB"
+               highlight.FillColor = Color3.fromRGB(255, 0, 0) 
+               highlight.OutlineColor = Color3.fromRGB(255, 0, 0)
+               highlight.FillTransparency = 0.5
+               highlight.OutlineTransparency = 0
+               highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+            end
+         end
+      else
+         for k, v in pairs(workspace.GameAI:GetDescendants()) do
+            if v:IsA("Highlight") and v.Name == "Fack HUB" then
+               v:Destroy()
+            end
+         end
+      end
+   end,
+})
+end
+game:GetService("CoreGui")["Rayfield-Old"]:Destroy()
