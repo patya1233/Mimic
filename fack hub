@@ -1363,7 +1363,75 @@ if table.find(allowedPlaceIds, game.PlaceId) then
 
 local Section = dTab:CreateSection("Auto Win")
 
+local Button = dTab:CreateButton({
+   Name = "Auto Win",
+   Callback = function()
+      game.Players.LocalPlayer.character.HumanoidRootPart.CFrame = CFrame.new(711.148499, 18.5800648, 1388.9541, 0.00597292185, 0, 0.999982119, 0, 1, 0, -0.999982119, 0, 0.00597292185)
+   end,
+})
 
+local Button = dTab:CreateButton({
+   Name = "Auto Win",
+   Callback = function()
+	local butterflies = workspace.GameInfo.PuzzleItems:GetChildren()
+
+for i, v in ipairs(butterflies) do
+    for i, v in ipairs(v:GetChildren()) do
+        if v:IsA("ProximityPrompt") then
+            v.HoldDuration = 0
+            v.MaxActivationDistance = 10
+            v.RequiresLineOfSight = false
+            v.Exclusivity = Enum.ProximityPromptExclusivity.AlwaysShow
+        end
+    end
+end
+local butterflies = workspace.Well.Burner:GetChildren()
+
+for i, v in ipairs(butterflies) do
+        if v:IsA("ProximityPrompt") then
+            v.HoldDuration = 0
+            v.MaxActivationDistance = 10
+            v.RequiresLineOfSight = false
+            v.Exclusivity = Enum.ProximityPromptExclusivity.AlwaysShow
+        end
+    end
+
+	local camera = workspace.CurrentCamera
+	local desiredCFrame = CFrame.new(Vector3.new(0, 10, 0), Vector3.new(0, 0, 0))
+	local prl = game.Players.LocalPlayer.Character.HumanoidRootPart
+
+   for i, v in pairs(workspace.GameInfo.PuzzleItems:GetChildren()) do
+	if v.Name == "GrabItem" then
+		local prox = v:FindFirstChild("ProximityPrompt")
+		prl.CFrame = v.CFrame * CFrame.new(0,0,3)
+		camera.CFrame = desiredCFrame
+		if prox then
+		wait(0.2)
+		fireproximityprompt(prox)
+		wait(0.2)
+		end
+	end
+end
+
+local camera = workspace.CurrentCamera
+local desiredCFrame = CFrame.new(Vector3.new(0, 10, 0), Vector3.new(0, 0, 0))
+local prl = game.Players.LocalPlayer.Character.HumanoidRootPart
+
+for i = 1, 8 do  -- Loop 8 times
+    for i, v in pairs(workspace.Well:GetChildren()) do
+        if v.Name == "Burner" then
+            local prox = v:FindFirstChild("ProximityPrompt")
+            prl.CFrame = v.CFrame * CFrame.new(0,-1,0)
+            camera.CFrame = desiredCFrame
+            if prox then
+                wait(0.2)
+                fireproximityprompt(prox)
+            end
+        end
+    end
+end
+   end,
+})
 
 local Section = dTab:CreateSection("ESP")
 
@@ -1527,4 +1595,37 @@ local Toggle = dTab:CreateToggle({
    end,
 })
 end
+
+local Section = dTab:CreateSection("Auto Win")
+
+local Section = dTab:CreateSection("ESP")
+
+local Toggle = dTab:CreateToggle({
+   Name = "ESP Monster",
+   CurrentValue = false,
+   Flag = "Toggle1", 
+   Callback = function(Value)
+      if Value then
+         for k, v in pairs(workspace.GameAI:GetChildren()) do
+            if v:IsA("Model") and not v:FindFirstChild("Fack HUB") then
+               local highlight = Instance.new("Highlight")
+               highlight.Parent = v
+               highlight.Name = "Fack HUB"
+               highlight.FillColor = Color3.fromRGB(255, 0, 0) 
+               highlight.OutlineColor = Color3.fromRGB(255, 0, 0)
+               highlight.FillTransparency = 0.5
+               highlight.OutlineTransparency = 0
+               highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+            end
+         end
+      else
+         for k, v in pairs(workspace.GameAI:GetDescendants()) do
+            if v:IsA("Highlight") and v.Name == "Fack HUB" then
+               v:Destroy()
+            end
+         end
+      end
+   end,
+})
+
 game:GetService("CoreGui")["Rayfield-Old"]:Destroy()
